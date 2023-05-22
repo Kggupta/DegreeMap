@@ -38,7 +38,7 @@ Only move onto this step once you complete the creation of a local instance of t
 ```
 cd Server
 npm install
-node sample-data.js
+node SampleData.js
 ```
 
 Navigate to your mysql database in a Terminal window and you will see the sample data!
