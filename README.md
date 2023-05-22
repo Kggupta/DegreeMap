@@ -2,7 +2,7 @@
 
 FilmFlix is a web application that will allow users to manage, rate, and analyse movies registered in the IMDB database. We will also include trivia features so that users can test themselves on how well they know the film industry. Our target demographic is people who are obsessed with finding and keeping track of their film catalogue. Our users are the kind of people who want to know everything about the industry and become critics.
 
-We will use the [https://datasets.imdbws.com/](IMDB dataset) to download the Movie and Actor/Actress catalogues. 
+We will use the [IMDB dataset](https://datasets.imdbws.com/) to download the Movie and Actor/Actress catalogues. 
 
 # Team Members
 - Keshav Gupta 
