@@ -1,0 +1,5 @@
+uid,subject,course_number,name,grade,weight
+1,"CS",348,"A1",90,25
+1,"CS",348,"A2",91,10
+2,"CS",348,"A1",19,25
+1,"CS",348,"A3",95,40

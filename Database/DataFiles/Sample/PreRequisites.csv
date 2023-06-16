@@ -1,0 +1,5 @@
+subject,course_number,pre_requisite_subject,pre_requisite_number
+"CS",492,"CS",348
+"CS",348,"CLAS",104
+"CS",348,"HRM",200
+"CS",449,"CS",348

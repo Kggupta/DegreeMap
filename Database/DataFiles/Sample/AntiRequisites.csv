@@ -1,0 +1,3 @@
+subject,course_number,anti_requisite_subject,anti_requisite_number
+"CS",348,"CS",492
+"HRM",200,"CLAS",104
