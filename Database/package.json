@@ -1,0 +1,23 @@
+{
+  "name": "degreemap_db",
+  "version": "1.0.0",
+  "description": "Database populating script for the DegreeMap application",
+  "main": "PopulateData.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.2.0",
+    "bcrypt": "^5.1.0",
+	  "body-parser": "^1.20.1",
+	  "cors": "^2.8.5",
+	  "csv-parse": "^5.3.5",
+	  "express": "^4.18.2",
+	  "mysql": "^2.18.1",
+	  "mysql2": "^3.0.1",
+	  "nodemon": "^2.0.20",
+	  "readline": "^1.3.0"
+  }
+}

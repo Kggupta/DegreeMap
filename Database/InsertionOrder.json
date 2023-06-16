@@ -1,0 +1,16 @@
+[
+	"User",
+	"Course",
+	"Friends",
+	"Professor",
+	"Term",
+	"Takes",
+	"PreRequisites",
+	"AntiRequisites",
+	"PercentageCourse",
+	"Section",
+	"Schedule",
+	"GradedContent",
+	"Deadlines",
+	"Attends"
+]

@@ -1,0 +1,2 @@
+uid,email,name,password,level,is_admin
+1,"admin@uwaterloo.ca","Admin","root1234","1A",1
