@@ -13,15 +13,10 @@ CREATE TABLE IF NOT EXISTS User (
 
 CREATE TABLE IF NOT EXISTS Course (
 	subject VARCHAR(10) NOT NULL,
-	course_number INT NOT NULL,
+	course_number VARCHAR(10) NOT NULL,
 	name VARCHAR(100) NOT NULL,
-	description VARCHAR(1000) NOT NULL,
+	description VARCHAR(10000) NOT NULL,
 	PRIMARY KEY (subject, course_number)
-);
-
-CREATE TABLE IF NOT EXISTS Term (
-	uid INT NOT NULL PRIMARY KEY,
-	name VARCHAR(25) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Professor (
@@ -31,7 +26,7 @@ CREATE TABLE IF NOT EXISTS Professor (
 
 CREATE TABLE IF NOT EXISTS PercentageCourse (
 	subject VARCHAR(10) NOT NULL,
-	course_number INT NOT NULL,
+	course_number VARCHAR(10) NOT NULL,
 	FOREIGN KEY (subject, course_number) REFERENCES Course(subject, course_number)
 		ON DELETE CASCADE,
 	PRIMARY KEY (subject, course_number)
@@ -39,9 +34,9 @@ CREATE TABLE IF NOT EXISTS PercentageCourse (
 
 CREATE TABLE IF NOT EXISTS PreRequisites (
 	subject VARCHAR(10) NOT NULL,
-	course_number INT NOT NULL,
+	course_number VARCHAR(10) NOT NULL,
 	pre_requisite_subject VARCHAR(10) NOT NULL,
-	pre_requisite_number INT NOT NULL,
+	pre_requisite_number VARCHAR(10) NOT NULL,
 	PRIMARY KEY (subject, course_number, pre_requisite_subject, pre_requisite_number),
 	FOREIGN KEY (subject, course_number) REFERENCES Course(subject, course_number)
 		ON DELETE CASCADE,
@@ -54,9 +49,9 @@ CREATE TABLE IF NOT EXISTS PreRequisites (
 
 CREATE TABLE IF NOT EXISTS AntiRequisites (
 	subject VARCHAR(10) NOT NULL,
-	course_number INT NOT NULL,
+	course_number VARCHAR(10) NOT NULL,
 	anti_requisite_subject VARCHAR(10) NOT NULL,
-	anti_requisite_number INT NOT NULL,
+	anti_requisite_number VARCHAR(10) NOT NULL,
 	PRIMARY KEY (subject, course_number, anti_requisite_subject, anti_requisite_number),
 	FOREIGN KEY (subject, course_number) REFERENCES Course(subject, course_number),
 	FOREIGN KEY (anti_requisite_subject, anti_requisite_number) REFERENCES Course(subject, course_number),
@@ -67,42 +62,36 @@ CREATE TABLE IF NOT EXISTS AntiRequisites (
 
 CREATE TABLE IF NOT EXISTS Section (
 	section INT NOT NULL,
-	term INT NOT NULL,
 	subject VARCHAR(10) NOT NULL,
-	course_number INT NOT NULL,
+	course_number VARCHAR(10) NOT NULL,
 	type VARCHAR(3) NOT NULL,
-	PRIMARY KEY (section, term, subject, course_number),
-	FOREIGN KEY (subject, course_number) REFERENCES Course(subject, course_number) ON DELETE CASCADE,
-	FOREIGN KEY (term) REFERENCES Term(uid) ON DELETE CASCADE,
-	CONSTRAINT type_chk CHECK (
-		type = 'LEC' OR type = 'LAB' OR type = 'TST' OR type = 'TUT'
-	)
+	PRIMARY KEY (section, subject, course_number),
+	FOREIGN KEY (subject, course_number) REFERENCES Course(subject, course_number) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS Schedule (
 	uid INT NOT NULL,
 	section INT NOT NULL,
-	term INT NOT NULL,
 	subject VARCHAR(10) NOT NULL,
-	course_number INT NOT NULL,
-	professor_id VARCHAR(100) NOT NULL,
-	days VARCHAR(10) NOT NULL,
+	course_number VARCHAR(10) NOT NULL,
+	professor_id VARCHAR(100),
+	days VARCHAR(10),
 	start_time TIME NOT NULL,
 	end_time TIME NOT NULL,
-	location_room VARCHAR(10) NOT NULL,
-	location_building VARCHAR(10) NOT NULL,
-	FOREIGN KEY (professor_id) REFERENCES Professor(uid) ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (section, term, subject, course_number) REFERENCES Section(section, term, subject, course_number)
+	location_room VARCHAR(10),
+	location_building VARCHAR(10),
+	FOREIGN KEY (professor_id) REFERENCES Professor(uid) ON DELETE CASCADE,
+	FOREIGN KEY (section, subject, course_number) REFERENCES Section(section, subject, course_number)
 		ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT end_after_start_chk CHECK (
-		start_time < end_time
+		start_time <= end_time
 	)
 );
 
 CREATE TABLE IF NOT EXISTS Takes (
 	uid INT NOT NULL,
 	subject VARCHAR(10) NOT NULL,
-	course_number INT NOT NULL,
+	course_number VARCHAR(10) NOT NULL,
 	grade DECIMAL(5, 2),
 	level VARCHAR(2),
 	FOREIGN KEY (uid) REFERENCES User(uid) ON DELETE CASCADE,
@@ -116,13 +105,12 @@ CREATE TABLE IF NOT EXISTS Takes (
 CREATE TABLE IF NOT EXISTS Attends (
 	uid INT NOT NULL,
 	section INT NOT NULL,
-	term INT NOT NULL,
 	subject VARCHAR(10) NOT NULL,
-	course_number INT NOT NULL,
+	course_number VARCHAR(10) NOT NULL,
 	FOREIGN KEY (uid) REFERENCES User(uid) ON DELETE CASCADE,
-	FOREIGN KEY (section, term, subject, course_number) REFERENCES Section(section, term, subject, course_number)
+	FOREIGN KEY (section, subject, course_number) REFERENCES Section(section, subject, course_number)
 		ON DELETE CASCADE ON UPDATE CASCADE,
-	PRIMARY KEY (uid, section, term, subject, course_number)
+	PRIMARY KEY (uid, section, subject, course_number)
 );
 
 CREATE TABLE IF NOT EXISTS Friends (
@@ -139,7 +127,7 @@ CREATE TABLE IF NOT EXISTS Friends (
 CREATE TABLE IF NOT EXISTS Deadlines (
 	uid INT NOT NULL,
 	subject VARCHAR(10) NOT NULL,
-	course_number INT NOT NULL,
+	course_number VARCHAR(10) NOT NULL,
 	name VARCHAR(20) NOT NULL,
 	due_date DATETIME NOT NULL,
 	FOREIGN KEY (uid) REFERENCES User(uid) ON DELETE CASCADE,
@@ -151,7 +139,7 @@ CREATE TABLE IF NOT EXISTS Deadlines (
 CREATE TABLE IF NOT EXISTS GradedContent (
 	uid INT NOT NULL,
 	subject VARCHAR(10) NOT NULL,
-	course_number INT NOT NULL,
+	course_number VARCHAR(10) NOT NULL,
 	name VARCHAR(20) NOT NULL,
 	grade INT NOT NULL,
 	weight DECIMAL(5, 2) NOT NULL,
