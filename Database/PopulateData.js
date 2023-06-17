@@ -12,6 +12,7 @@ const CreateTables = require('./src/CreateTables');
 const DropTables = require('./src/DropTables');
 const PopulateSampleData = require('./src/PopulateSampleData');
 const PopulateProductionData = require('./src/PopulateProductionData');
+const CreateTriggers = require('./src/CreateTriggers');
 
 // If the argument is incorrect, show the usage guide
 if (process.argv.length < 3 || !Environments.includes(WhichEnvironment)) {
@@ -35,6 +36,9 @@ async function PopulateData() {
 
 	// Re-create all the database tables
 	await CreateTables(connection);
+
+	// Add triggers
+	await CreateTriggers(connection);
 	
 	switch (WhichEnvironment) {
 		case SAMPLE:
