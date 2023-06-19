@@ -1,0 +1,40 @@
+Keshav Gupta
+- Wrote production and sample data population scripts
+-- Wrote readme guides on how to run the scripts
+-- Wrote R3 and R4 in report
+- Wrote the application high-level description
+- Experimented with the openapi dataset source to determine how the data would be retrieved
+- Wrote interface designs for R6, R7, R8
+- Created sample sql queries for R11, R7
+- Transferred all sql queries to github
+-- created the corresponding .out files
+- Created SQL Procedures for application
+- Brainstormed application features
+- Added sample sql query output screenshots to report
+Isshana Mohanakumar
+- Wrote interface designs for R9, R10
+- Created sample sql queries for R8
+- Created the initial sample and prod csv data
+- Created E/R diagram in MIRO
+- Brainstormed application features
+- Wrote application assumptions (Sections, professors)
+Edward Pei
+- Wrote interface designs for R11, R12
+- Created sample sql queries for R9
+- Contributed to Deadlines and Graded content E/R diagram section
+- Created sql Triggers
+- Brainstormed application features
+- Wrote application assumptions (Deadlines, Graded Content)
+Ricky Lu
+- Wrote interface designs for R13, R14
+- Created sample sql queries for R10
+- Converted E/R diagram to DDL
+- Wrote R2 section
+- Brainstormed application features
+Govind Nair
+- Wrote interface designs for R15, R16
+- Created sample sql queries for R6
+- contributed to professor e/r diagram section
+- Converted DDL to CREATE TABLES
+- Brainstormed application features
+- Wrote application assumptions (Users, Courses)

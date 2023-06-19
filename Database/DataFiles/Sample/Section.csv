@@ -1,7 +1,7 @@
-section,subject,course_number,type
-101,"CS",348,"LEC"
-103,"CS",348,"TUT"
-102,"CS",348,"TUT"
-102,"CS",449,"TST"
-10,"CS",449,"LEC"
-4,"CS",348,"LAB"
+section,subject,course_number,type,professor_id,days,start_time,end_time,location_room,location_building
+101,"CS",348,"LEC",1,96,"01:00:00","02:00:00","1035","MC"
+103,"CS",348,"TUT",2,64,"01:01:00","03:00:00","1020","MC"
+102,"CS",348,"TUT",3,32,"2:30:00","3:30:00","2025","MC"
+102,"CS",449,"TST",4,16,"01:00:00","02:00:00","111","B2"
+10,"CS",449,"LEC",4,8,"16:00:00","18:00:00","1246","STC"
+4,"CS",348,"LAB",1,8,"01:01:01","04:04:03","101","DC"

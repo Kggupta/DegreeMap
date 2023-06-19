@@ -1,7 +1,6 @@
 uid,subject,course_number,grade,level
-1,"CS",348,95.0,"3A"
-1,"CLAS",104,NULL,"2A"
-1,"CS",449,95.0,"2A"
+1,"CLAS",104,95.0,"3A"
 2,"HRM",200,NULL,"1A"
 2,"CS",492,84.0,"1B"
-2,"CS",348,90.0,"2A"
+2,"CS",348,40.0,"2A"
+3,"CLAS",104,95.0,"2A"

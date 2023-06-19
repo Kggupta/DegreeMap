@@ -79,11 +79,7 @@ node PopulateData.js prod
 The script will drop the entire existing database tables, recreate the tables, query the prod api, and re-populate the data. You must use the **prod** argument to populate against the production dataset.
 
 # 4. Running The Application
-TODO
-# 4.1 Running The Back-End
-TODO
-# 4.2 Running The Front-End
-TODO
+The application is currently not implemented on the client and server side. At the moment, everything is related to `Database` setup, population, and the SQL queries that will support the UI features that are coming in the next milestone. 
 
 # 5. Current Features
 The application currently supports the following features:
@@ -91,4 +87,5 @@ The application currently supports the following features:
 2. Populating the database with the **sample data** using the script in `DegreeMap/Database/PopulateData.js`.
 3. Populating the database with the **production data** using the script in `DegreeMap/Database/PopulateData.js`.
    1. Interface with the Waterloo API using the TOKEN in the `.env` file.
-4. SQL Query testing for the sample data in `DegreeMap/Database/Queries/test-sample.sql`.
+4. SQL Query testing for the sample data in `DegreeMap/Database/Queries/TestSample`.
+   1. Currently supports the SQL queries related to R6 to R11 for the sample data

@@ -5,7 +5,19 @@ const API_URL = 'https://openapi.data.uwaterloo.ca/v3/';
 const GET_SCHEDULE = 'ClassSchedules';
 const GET_CURRENT_TERM = 'Terms/current';
 const GET_COURSES = 'Courses';
-const VALID_SCHEDULES = new RegExp(`(M|W|T|Th|F|Sa|Su)+$`);
+
+/**
+ * Convert the 7 character string of Y's and N's to a decimal number
+ * @param {*} str - string of Y's and N's
+ * @returns Number
+ */
+function convertToDecimal(str) {
+	// Convert 'Y' to 1 and 'N' to 0, and concatenate the characters
+	return parseInt(str
+	  .split('')
+	  .map(char => (char === 'Y' ? '1' : '0'))
+	  .join(''), 2);
+}
 
 /**
  * Returns the data with the correct headers and tokens based on the given api endpoint
@@ -140,31 +152,21 @@ async function PopulateProductionData(connection) {
 
 		for (let t = 0; t < CourseSchedule.length; t++) {
 			let section = CourseSchedule[t];
+			let scheduleData = section.scheduleData[0];
 			totalSections++;
 			// Add the section to the database
 			await InsertData('Section', [
 				['section', section.classSection],
 				['subject', strn(course.subjectCode)],
 				['course_number', strn(course.catalogNumber)],
-				['type', strn(section.courseComponent)]
+				['type', strn(section.courseComponent)],
+				['professor_id', section.instructorData ? strn(section.instructorData[0].instructorUniqueIdentifier) : "NULL"],
+				['days', (scheduleData && scheduleData.classMeetingWeekPatternCode) ? convertToDecimal(scheduleData.classMeetingWeekPatternCode) : "NULL"] ,
+				['start_time', time(scheduleData.classMeetingStartTime)],
+				['end_time', time(scheduleData.classMeetingEndTime)],
+				['location_building', (scheduleData.locationName ?? "").split(" ")[1] ? strn(scheduleData.locationName.split(" ")[0]) : "NULL"],
+				['location_room', (scheduleData.locationName ?? "").split(" ")[1] ? strn(scheduleData.locationName.split(" ")[1]) : "NULL"]
 			], connection)
-
-			// Add the schedules for each section to the database
-			await section.scheduleData.forEach(async (schedule, index) => {
-				totalSchedules++;
-				await InsertData('Schedule', [
-					['uid', index],
-					['section', section.classSection],
-					['subject', strn(course.subjectCode)],
-					['course_number', strn(course.catalogNumber)],
-					['professor_id', section.instructorData ? strn(section.instructorData[0].instructorUniqueIdentifier) : "NULL"],
-					['days', VALID_SCHEDULES.test(schedule.classMeetingDayPatternCode) ? strn(schedule.classMeetingDayPatternCode) : "NULL"] ,
-					['start_time', time(schedule.classMeetingStartTime)],
-					['end_time', time(schedule.classMeetingEndTime)],
-					['location_building', (schedule.locationName ?? "").split(" ")[1] ? strn(schedule.locationName.split(" ")[0]) : "NULL"],
-					['location_room', (schedule.locationName ?? "").split(" ")[1] ? strn(schedule.locationName.split(" ")[1]) : "NULL"]
-				], connection)
-			})
 		}
 	}
 	console.log(`> 'Course' - (${Courses.length} rows)`);

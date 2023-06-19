@@ -3,12 +3,11 @@
 	"Course",
 	"Friends",
 	"Professor",
+	"PercentageCourse",
 	"Takes",
 	"PreRequisites",
 	"AntiRequisites",
-	"PercentageCourse",
 	"Section",
-	"Schedule",
 	"GradedContent",
 	"Deadlines",
 	"Attends"

@@ -1,0 +1,76 @@
++---------+---------------+--------------------------------------------+--------------------------+
+| subject | course_number | name                                       | description              |
++---------+---------------+--------------------------------------------+--------------------------+
+| CLAS    | 104           | Classical Mythology                        | CLAS104 description here |
+| CS      | 348           | Introduction To Databases                  | CS348 description here   |
+| CS      | 449           | Human-Computer Interaction                 | CS449 description here   |
+| CS      | 492           | Social Implications Of Computing           | CS492 description here   |
+| HRM     | 200           | Introduction To Human Resources Management | HRM200 description here  |
++---------+---------------+--------------------------------------------+--------------------------+
+5 rows in set (0.00 sec)
+
++---------+---------------+---------------------------+------------------------+
+| subject | course_number | name                      | description            |
++---------+---------------+---------------------------+------------------------+
+| CS      | 348           | Introduction To Databases | CS348 description here |
++---------+---------------+---------------------------+------------------------+
+1 row in set (0.00 sec)
+
++---------+---------------+----------------------------------+--------------------------+
+| subject | course_number | name                             | description              |
++---------+---------------+----------------------------------+--------------------------+
+| CLAS    | 104           | Classical Mythology              | CLAS104 description here |
+| CS      | 348           | Introduction To Databases        | CS348 description here   |
+| CS      | 449           | Human-Computer Interaction       | CS449 description here   |
+| CS      | 492           | Social Implications Of Computing | CS492 description here   |
++---------+---------------+----------------------------------+--------------------------+
+4 rows in set (0.00 sec)
+
++---------+---------------+--------------------------------------------+-------------------------+
+| subject | course_number | name                                       | description             |
++---------+---------------+--------------------------------------------+-------------------------+
+| CS      | 348           | Introduction To Databases                  | CS348 description here  |
+| HRM     | 200           | Introduction To Human Resources Management | HRM200 description here |
++---------+---------------+--------------------------------------------+-------------------------+
+2 rows in set (0.00 sec)
+
++---------+---------------+--------------------------------------------+-------------------------+
+| subject | course_number | name                                       | description             |
++---------+---------------+--------------------------------------------+-------------------------+
+| HRM     | 200           | Introduction To Human Resources Management | HRM200 description here |
++---------+---------------+--------------------------------------------+-------------------------+
+1 row in set (0.00 sec)
+
++---------+---------------+---------------------------+------------------------+
+| subject | course_number | name                      | description            |
++---------+---------------+---------------------------+------------------------+
+| CS      | 348           | Introduction To Databases | CS348 description here |
+| CS      | 348           | Introduction To Databases | CS348 description here |
+| CS      | 348           | Introduction To Databases | CS348 description here |
+| CS      | 348           | Introduction To Databases | CS348 description here |
++---------+---------------+---------------------------+------------------------+
+4 rows in set (0.00 sec)
+
+Empty set (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
++---------+---------------+--------------------------------------------+-------------------------+
+| subject | course_number | name                                       | description             |
++---------+---------------+--------------------------------------------+-------------------------+
+| CS      | 492           | Social Implications Of Computing           | CS492 description here  |
+| HRM     | 200           | Introduction To Human Resources Management | HRM200 description here |
++---------+---------------+--------------------------------------------+-------------------------+
+2 rows in set (0.00 sec)
+
++---------+---------------+----------------------------------+------------------------+
+| subject | course_number | name                             | description            |
++---------+---------------+----------------------------------+------------------------+
+| CS      | 492           | Social Implications Of Computing | CS492 description here |
++---------+---------------+----------------------------------+------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)

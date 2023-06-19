@@ -1,0 +1,28 @@
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
++-------------+
+| average_gpa |
++-------------+
+|   62.000000 |
++-------------+
+1 row in set (0.00 sec)
+
++----------------+
+| four_point_gpa |
++----------------+
+|        1.85000 |
++----------------+
+1 row in set (0.00 sec)
+
++-----+---------------------+-----------------------+-------------+------+
+| uid | name                | email                 | average_gpa | rank |
++-----+---------------------+-----------------------+-------------+------+
+|   2 | Isshana Mohanakumar | imohanak@uwaterloo.ca |   62.000000 |    2 |
++-----+---------------------+-----------------------+-------------+------+
+1 row in set (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
