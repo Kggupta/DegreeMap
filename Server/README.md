@@ -1,3 +1,3 @@
-# TO-DO
+# DegreeMap REST API
 
-Add REST API server endpoints here.
+Currently, the API has no endpoints. They will be implemented in the next milestone

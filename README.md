@@ -88,4 +88,9 @@ The application currently supports the following features:
 3. Populating the database with the **production data** using the script in `DegreeMap/Database/PopulateData.js`.
    1. Interface with the Waterloo API using the TOKEN in the `.env` file.
 4. SQL Query testing for the sample data in `DegreeMap/Database/Queries/TestSample`.
-   1. Currently supports the SQL queries related to R6 to R11 for the sample data
+5. Currently supports the SQL queries related to R6 to R11 for the sample data
+6. Feature interface descriptions for all R6 - R16
+7. Feature SQL Queries on sample data for R6 - R11
+   1. Both `.sql` and `.out` files for all the features.
+8. SQL Scripts for creating database, tables, triggers, and procedures in `DegreeMap/Database/Queries`
+   1. Also a script for dropping all tables.

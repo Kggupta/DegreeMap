@@ -1,3 +1,3 @@
-# TO-DO
+# DegreeMap React Interface
 
-Add the React app here.
+Currently, the interface is not implemented. It will be added in time for the next milestone.
