@@ -103,3 +103,4 @@ The application currently supports the following features:
    1. Both `.sql` and `.out` files for all the features.
 8. SQL Scripts for creating database, tables, triggers, and procedures in `DegreeMap/Database/Queries`
    1. Also a script for dropping all tables.
+9. Boilerplate Client and Server code.

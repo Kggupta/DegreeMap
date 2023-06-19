@@ -16,3 +16,6 @@ npm install
 ```
 node index.js
 ```
+
+# 2. Stopping the API
+1. Use control + C in most systems.
