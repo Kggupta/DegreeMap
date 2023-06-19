@@ -81,6 +81,15 @@ The script will drop the entire existing database tables, recreate the tables, q
 # 4. Running The Application
 The application is currently not implemented on the client and server side. At the moment, everything is related to `Database` setup, population, and the SQL queries that will support the UI features that are coming in the next milestone. 
 
+## 4.1 Running The Client
+See `client/README.md` for step by step directions on how to start the React front-end.
+
+## 4.2 Running The Server
+See `server/README.md` for step by step directions on how to start the Express.js/Node.js back-end.
+
+## 4.3 Running The Database
+See earlier sections for this setup.
+
 # 5. Current Features
 The application currently supports the following features:
 1. Configuring the database tables in `DegreeMap/Database/Queries`.
@@ -88,4 +97,10 @@ The application currently supports the following features:
 3. Populating the database with the **production data** using the script in `DegreeMap/Database/PopulateData.js`.
    1. Interface with the Waterloo API using the TOKEN in the `.env` file.
 4. SQL Query testing for the sample data in `DegreeMap/Database/Queries/TestSample`.
-   1. Currently supports the SQL queries related to R6 to R11 for the sample data
+5. Currently supports the SQL queries related to R6 to R11 for the sample data
+6. Feature interface descriptions for all R6 - R16
+7. Feature SQL Queries on sample data for R6 - R11
+   1. Both `.sql` and `.out` files for all the features.
+8. SQL Scripts for creating database, tables, triggers, and procedures in `DegreeMap/Database/Queries`
+   1. Also a script for dropping all tables.
+9. Boilerplate Client and Server code.

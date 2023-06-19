@@ -1,5 +1,8 @@
 const mysql2 = require('mysql2');
+// Usage example string
 const Usage = "node PopulateData.js [sample/prod]\n- Ex: node PopulateData.js sample";
+
+// Sample or prod options for data population source
 const SAMPLE = "sample";
 const PROD = "prod";
 const Environments = [SAMPLE, PROD];
