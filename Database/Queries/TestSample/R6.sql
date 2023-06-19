@@ -43,10 +43,9 @@ WHERE email = 'tes@uwaterloo.ca' AND
 password = 'passpass' LIMIT 1;
 
 -- Update administrator level
--- Ensuring the user has admin permissions to do this would be a separate query
-UPDATE User
-SET is_admin = 1
-WHERE uid = 6;
+-- See Procedures.sql for the procedure code
+CALL UpdateUserAdminPermission(1, 6);
+CALL UpdateUserAdminPermission(6, 1);
 
 SELECT * FROM User WHERE uid = 6;
 

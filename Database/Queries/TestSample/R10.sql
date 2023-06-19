@@ -26,7 +26,7 @@ FROM Takes AS T
 WHERE T.uid = 2
     AND T.grade IS NOT NULL;
 
--- Get all user GPAs for the ranking aspect
+-- Get user GPA rank for the ranking aspect
 WITH AllRanks AS (SELECT
     U.uid,
     U.name,

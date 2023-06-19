@@ -21,6 +21,7 @@ Empty set (0.00 sec)
 
 Empty set (0.00 sec)
 
+ERROR 1644 (45000): You do not have permission to do that.
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
