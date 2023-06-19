@@ -81,6 +81,15 @@ The script will drop the entire existing database tables, recreate the tables, q
 # 4. Running The Application
 The application is currently not implemented on the client and server side. At the moment, everything is related to `Database` setup, population, and the SQL queries that will support the UI features that are coming in the next milestone. 
 
+## 4.1 Running The Client
+See `client/README.md` for step by step directions on how to start the React front-end.
+
+## 4.2 Running The Server
+See `server/README.md` for step by step directions on how to start the Express.js/Node.js back-end.
+
+## 4.3 Running The Database
+See earlier sections for this setup.
+
 # 5. Current Features
 The application currently supports the following features:
 1. Configuring the database tables in `DegreeMap/Database/Queries`.
