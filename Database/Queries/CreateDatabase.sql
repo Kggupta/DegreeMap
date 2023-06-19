@@ -1,3 +1,4 @@
 -- Creates the application database and switches to it.
-CREATE DATABASE IF NOT EXISTS degreemap;
+DROP DATABASE IF EXISTS degreemap;
+CREATE DATABASE degreemap;
 USE degreemap;

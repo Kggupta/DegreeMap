@@ -65,24 +65,15 @@ CREATE TABLE IF NOT EXISTS Section (
 	subject VARCHAR(10) NOT NULL,
 	course_number VARCHAR(10) NOT NULL,
 	type VARCHAR(3) NOT NULL,
-	PRIMARY KEY (section, subject, course_number),
-	FOREIGN KEY (subject, course_number) REFERENCES Course(subject, course_number) ON DELETE CASCADE
-);
-
-CREATE TABLE IF NOT EXISTS Schedule (
-	uid INT NOT NULL,
-	section INT NOT NULL,
-	subject VARCHAR(10) NOT NULL,
-	course_number VARCHAR(10) NOT NULL,
 	professor_id VARCHAR(100),
-	days VARCHAR(10),
+	days INT DEFAULT 127,
 	start_time TIME NOT NULL,
 	end_time TIME NOT NULL,
 	location_room VARCHAR(10),
 	location_building VARCHAR(10),
 	FOREIGN KEY (professor_id) REFERENCES Professor(uid) ON DELETE CASCADE,
-	FOREIGN KEY (section, subject, course_number) REFERENCES Section(section, subject, course_number)
-		ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY (section, subject, course_number),
+	FOREIGN KEY (subject, course_number) REFERENCES Course(subject, course_number) ON DELETE CASCADE,
 	CONSTRAINT end_after_start_chk CHECK (
 		start_time <= end_time
 	)

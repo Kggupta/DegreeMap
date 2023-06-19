@@ -13,6 +13,7 @@ const DropTables = require('./src/DropTables');
 const PopulateSampleData = require('./src/PopulateSampleData');
 const PopulateProductionData = require('./src/PopulateProductionData');
 const CreateTriggers = require('./src/CreateTriggers');
+const CreateDatabase = require('./src/CreateDatabase');
 
 // If the argument is incorrect, show the usage guide
 if (process.argv.length < 3 || !Environments.includes(WhichEnvironment)) {
@@ -31,10 +32,13 @@ async function PopulateData() {
 		multipleStatements: true
 	});
 
-	// Drop all tables in the database
+	// Create database
+	await CreateDatabase(connection);
+
+	// Drop all tables in the database (not required)
 	await DropTables(connection);
 
-	// Re-create all the database tables
+	// Re-create all the database tables and procedures
 	await CreateTables(connection);
 
 	// Add triggers
