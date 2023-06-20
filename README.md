@@ -110,3 +110,6 @@ The application currently supports the following features:
    6. Queries for R6 - R11
 9. Boilerplate Client code `client/`
 10. Boilerplate Server code `server/`
+
+# 6. Milestone Reports
+See `MilestoneReports/MX` to view the report PDFs and assets.
