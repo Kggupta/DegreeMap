@@ -106,15 +106,7 @@ CREATE TRIGGER CheckUserLevel
 BEFORE INSERT ON User
 FOR EACH ROW
 BEGIN
-    DECLARE valid_level BOOLEAN;
-    
-    SET valid_level = 0;
-    
-    IF NEW.level REGEXP '^[1-4][AB]$' THEN
-        SET valid_level = 1;
-    END IF;
-    
-    IF valid_level = 0 THEN
+    IF NEW.level REGEXP '^[1-4][AB]$' IS FALSE THEN
         SIGNAL SQLSTATE '45000'
             SET MESSAGE_TEXT = 'Invalid user level. Level must be one of 1A, 1B, ... 4A, 4B.';
     END IF;
