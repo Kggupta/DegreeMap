@@ -6,41 +6,24 @@
 -- R6
 -- -------------------------------------
 -- Register user
--- Registering user if they already exist will do nothing
-INSERT INTO User (email, name, password, level)
-SELECT 'test@uwaterloo.ca', 'Test', 'passpass', '1A'
-FROM DUAL
-WHERE NOT EXISTS (
-    SELECT 1
-    FROM User
-    WHERE email = 'test@uwaterloo.ca'
-);
+-- Registering user if they already exist will throw error
+CALL InsertUser('test@uwaterloo.ca', 'Test', 'passpass', '1A');
+CALL InsertUser('test@uwaterloo.ca', 'duplication', 'asdfasdf', '1B');
 
 SELECT * FROM User WHERE email = 'test@uwaterloo.ca';
 
 -- Login User with correct password
-SELECT * 
-FROM User
-WHERE email = 'test@uwaterloo.ca' AND
-password = 'passpass' LIMIT 1;
+CALL GetUserByEmailAndPassword('test@uwaterloo.ca', 'passpass');
 
 -- Login User with incorrect password
-SELECT *
-FROM User
-WHERE email = 'test@uwaterloo.ca' AND
-password = 'password' LIMIT 1;
+CALL GetUserByEmailAndPassword('test@uwaterloo.ca', 'password');
 
 -- Login User incorrect email
-SELECT *
-FROM User
-WHERE email = 'tes@uwaterloo.ca' AND
-password = 'passpass' LIMIT 1;
+CALL GetUserByEmailAndPassword('tes@uwaterloo.ca', 'passpass');
 
 -- Login User no account
-SELECT *
-FROM User
-WHERE email = 'tes@uwaterloo.ca' AND
-password = 'passpass' LIMIT 1;
+CALL GetUserByEmailAndPassword('tes@uwaterloo.ca', 'passpass');
+
 
 -- Update administrator level
 -- See Procedures.sql for the procedure code

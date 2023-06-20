@@ -41,3 +41,53 @@ BEGIN
         WHERE uid = target_uid;
     END IF;
 END;
+
+CREATE PROCEDURE InsertUser(
+    IN p_email VARCHAR(50),
+    IN p_name VARCHAR(50),
+    IN p_password VARCHAR(25),
+    IN p_level VARCHAR(2)
+)
+BEGIN
+    DECLARE email_count INT;
+    
+    -- Check if email already exists
+    SELECT COUNT(*) INTO email_count
+    FROM User
+    WHERE email = p_email;
+    
+    IF email_count > 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Email already exists.';
+    ELSE
+        -- Insert the user
+        INSERT INTO User (email, name, password, level)
+        VALUES (p_email, p_name, p_password, p_level);
+    END IF;
+    
+END;
+
+CREATE PROCEDURE GetUserByEmailAndPassword(
+    IN p_email VARCHAR(50),
+    IN p_password VARCHAR(25)
+)
+BEGIN
+    DECLARE user_count INT;
+    
+    -- Check if email and password are correct
+    SELECT COUNT(*) INTO user_count
+    FROM User
+    WHERE email = p_email AND password = p_password;
+    
+    IF user_count = 0 THEN
+        SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Invalid email or password.';
+    ELSE
+        -- Return user attributes
+        SELECT *
+        FROM User
+        WHERE email = p_email AND password = p_password LIMIT 1;
+    END IF;
+    
+END;
+
