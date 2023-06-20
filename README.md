@@ -92,15 +92,21 @@ See earlier sections for this setup.
 
 # 5. Current Features
 The application currently supports the following features:
-1. Configuring the database tables in `DegreeMap/Database/Queries`.
-2. Populating the database with the **sample data** using the script in `DegreeMap/Database/PopulateData.js`.
-3. Populating the database with the **production data** using the script in `DegreeMap/Database/PopulateData.js`.
-   1. Interface with the Waterloo API using the TOKEN in the `.env` file.
+1. Configuring the database tables in `DegreeMap/Database/Queries`
+2. Populating the database with the **sample data** using the script in `DegreeMap/Database/PopulateData.js`
+3. Populating the database with the **production data** using the script in `DegreeMap/Database/PopulateData.js`
+   1. Interface with the Waterloo API using the TOKEN in the `.env` file
 4. SQL Query testing for the sample data in `DegreeMap/Database/Queries/TestSample`.
 5. Currently supports the SQL queries related to R6 to R11 for the sample data
-6. Feature interface descriptions for all R6 - R16
+6. Feature interface descriptions for all R6 - R16 in the report
 7. Feature SQL Queries on sample data for R6 - R11
    1. Both `.sql` and `.out` files for all the features.
-8. SQL Scripts for creating database, tables, triggers, and procedures in `DegreeMap/Database/Queries`
-   1. Also a script for dropping all tables.
-9. Boilerplate Client and Server code.
+8. SQL Scripts in `DegreeMap/Database/Queries`
+   1. Creating database
+   2. Creating tables
+   3. Creating triggers
+   4. Creating procedures
+   5. Dropping tables
+   6. Queries for R6 - R11
+9. Boilerplate Client code `client/`
+10. Boilerplate Server code `server/`

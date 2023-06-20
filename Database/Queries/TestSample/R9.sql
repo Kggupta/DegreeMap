@@ -13,7 +13,7 @@ FROM Takes AS T1
 INNER JOIN Takes AS T2 ON T1.subject = T2.subject
     AND T1.course_number = T2.course_number
 WHERE T1.uid = 1
-    AND T2.uid = 2;
+    AND T2.uid = 3;
 
 -- Get course sections that two given users (1, 2 in this case) are attending at the same time
 SELECT S.subject, S.course_number, S.section

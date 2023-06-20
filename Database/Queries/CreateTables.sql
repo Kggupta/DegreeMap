@@ -145,3 +145,9 @@ CREATE TABLE IF NOT EXISTS GradedContent (
 		weight >= 0 -- weights must be non negative
 	)
 );
+
+CREATE VIEW CreditReceivedCourses AS
+SELECT C.subject, C.course_number, C.name, C.description
+FROM Course AS C
+LEFT JOIN PercentageCourse AS PC ON C.subject = PC.subject AND C.course_number = PC.course_number
+WHERE PC.subject IS NULL;

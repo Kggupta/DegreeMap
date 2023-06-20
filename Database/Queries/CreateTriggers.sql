@@ -10,7 +10,18 @@ BEGIN
 		PreRequisites.pre_requisite_subject = NEW.anti_requisite_subject AND
 		PreRequisites.pre_requisite_number = NEW.anti_requisite_number;
 END;
+
 -- Attends triggers
+CREATE TRIGGER verify_max_fifteen_attending BEFORE INSERT
+ON Attends FOR EACH ROW
+BEGIN
+	IF (SELECT COUNT(*) + 1 
+		FROM Attends 
+		WHERE Attends.uid = NEW.uid) > 15 THEN
+		SIGNAL SQLSTATE '45000'
+		SET MESSAGE_TEXT = 'Cannot attend more course section. Maximum 15 sections.';
+	END IF;
+END;
 
 -- Course triggers
 
@@ -91,3 +102,20 @@ BEGIN
 END;
 
 -- User triggers
+CREATE TRIGGER CheckUserLevel
+BEFORE INSERT ON User
+FOR EACH ROW
+BEGIN
+    DECLARE valid_level BOOLEAN;
+    
+    SET valid_level = 0;
+    
+    IF NEW.level REGEXP '^[1-4][AB]$' THEN
+        SET valid_level = 1;
+    END IF;
+    
+    IF valid_level = 0 THEN
+        SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Invalid user level. Level must be one of 1A, 1B, ... 4A, 4B.';
+    END IF;
+END;
