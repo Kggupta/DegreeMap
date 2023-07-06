@@ -1,0 +1,76 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage[left=1.00in, right=1.00in, top=1.00in, bottom=1.00in]{geometry}
+\title{CS348 Project Milestone 0}
+\author{Keshav Gupta\and Isshana Mohanakumar \and Edward Pei \and Ricky Lu \and Govind Nair}
+\begin{document}
+\maketitle
+
+\section*{R1. Application High-Level Description}
+\label{sec:R1}
+\subsection*{Description}
+Our group is creating a web application that will allow University of Waterloo students to manage their undergraduate career. The application will allow users to track things such as the courses they have taken each term, as well as their final grades, their current course schedules, and their friends in the university. They will be able to visualize all the courses they've taken, their estimated GPA, and the courses that they share with their friends.\\
+
+What sets us apart from other University applications like RateMyProf and UWFlow is that rather than focusing on individual courses, we consider the student's entire university career. We do this by calculating GPA's, persisting data from previous terms, and including this data in future analysis. We also help them plan courses based on pre-requisites and the courses their friends are taking. We will be a tool that the students use during their entire degree.
+
+\subsection*{Dataset Source}
+We will use the \href{https://openapi.data.uwaterloo.ca/api-docs/index.html}{University of Waterloo Open Data API} to download the department, courses, instructors, and term data. The API responses provided by the Open Data API will be provided in a JSON format, so we will need to process it into our MySQL tables.\\
+
+The dataset processing can be seen in \hyperref[sec:R3]{R3} for the sample dataset, and \hyperref[sec:R4]{R4} for the production dataset.
+
+\subsection*{Our Users}
+Our target demographic is University of Waterloo students who want to keep track of the courses they have taken, their GPA, and manage their degree requirements.\\
+
+They are the people who don't particularly like the native bare-bones HTML page that the university provides. Our users are the students who want something more involved so that they don't spend so much time browsing the undergraduate calendar to plan their next term of courses.
+
+\subsection*{Administrators}
+The administrators of our application will be the group members as specified at the top of this document. Administrators will have command-line access to the MySQL data base. The rest of the users will have basic student level access to the below proposed features, meaning that they can only interact with the feature as defined in the feature descriptions.\\
+
+The group member administrators will have be part of the administrator group within the context of the application, which will open certain inserting/deletion features of courses and instructors.
+
+\subsection*{Proposed Features}
+Below are the proposed features of our application.
+\subsubsection*{Basic Features}
+\begin{itemize}
+    \item \hyperref[sec:R6]{R6. User registration, login, and management}
+    \item \hyperref[sec:R7]{R7. List, and search courses (Student). As well as add and delete courses (Administrator).}
+    \item \hyperref[sec:R8]{R8. Manage user's student schedule}
+    \item \hyperref[sec:R9]{R9. Manage friends (other students), and view friends that are taking the same courses and lectures as the user}
+    \item \hyperref[sec:R10]{R10. Add previous courses taken as well as your final grades, calculating GPA}
+    \item \hyperref[sec:R10]{R10. Show all courses you can take based on pre-requisites and anti-requisites}
+\end{itemize}
+
+\subsubsection*{Fancy Features}
+\begin{itemize}
+    \item \hyperref[sec:R12]{R12. Pre-requisite graphs for a given course}
+    \item \hyperref[sec:R13]{R13. AI Model that suggests courses to users based on the courses they already took}
+    \item \hyperref[sec:R14]{R14. Update detailed course grades such as individual assignments, midterms, and exams to estimate final course grade}
+    \item \hyperref[sec:R15]{R15. SQL injection protection by sanitizing queries and password hashing}
+    \item \hyperref[sec:R16]{R16. Enter your course deadlines and receive emails when the deadline is approaching}
+\end{itemize}
+
+\section*{R2. System Support Description}
+\label{sec:R2}
+
+Our front-end interface will be a web application built in React. Our back-end API server will be built with Node.js and Express.js. These will rely on a MySQL database. Generally, our entire tech stack will be built with either JavaScript or TypeScript with SQL queries to interact with the database. We also expect to use JavaScript to process JSON data from the \href{https://openapi.data.uwaterloo.ca/api-docs/index.html}{University of Waterloo Open Data API} into our MySQL database.\\
+
+All of this will need to be run locally and requires \href{https://nodejs.org/en/download}{Node v18.5.0}, \href{https://nodejs.org/en/download}{NPM v8.12.1}, \href{https://dev.mysql.com/downloads/mysql/}{MySQL v8.0.33}. The application may work for other versions, but we will be developing and testing it using the ones specified above.\\
+
+Since all of the above technologies are supported on all major operating systems such as MacOS, Linux, and Windows, it can be run locally on any of these three systems. It might support more systems, but these are the main three that the majority of the world uses, which is why we specifically name these ones.
+
+\section*{Members}
+\begin{itemize}
+    \item \textbf{Keshav Gupta} created the initial GitHub repository and scripts to show how to connect and use the database. Brainstormed project features, and tech stack.
+    \item \textbf{Isshana Mohanakumar} contributed to writing the M0 report. Brainstormed project features, and tech stack.
+    \item \textbf{Edward Pei} contributed to writing the M0 report. Brainstormed project features, and tech stack.
+    \item \textbf{Ricky Lu} contributed to writing the M0 report. Brainstormed project features, and tech stack.
+    \item \textbf{Govind Nair} contributed to writing the M0 report. Brainstormed project features, and tech stack.
+
+\end{itemize}
+\section*{GitHub}
+
+All code is available in GitHub repository: \href{https://github.com/Kggupta/DegreeMap}{DegreeMap}
+\\\\See the \textbf{README.md} file for "Hello World" database startup guide.
+
+\end{document}
