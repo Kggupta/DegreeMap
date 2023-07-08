@@ -6,18 +6,23 @@ Keshav Gupta
 - Experimented with the openapi dataset source to determine how the data would be retrieved
 - Wrote interface designs for R6, R7, R8
 - Created sample sql queries for R11, R7
+- Created sample sql queries for R12
 - Transferred all sql queries to github
 -- created the corresponding .out files
 - Created SQL Procedures for application
 - Brainstormed application features
 - Added sample sql query output screenshots to report
+- Wrote RXc for all features in report
+
 Isshana Mohanakumar
 - Wrote interface designs for R9, R10
 - Created sample sql queries for R8
+- Created sample sql queries for R16
 - Created the initial sample and prod csv data
 - Created E/R diagram in MIRO
 - Brainstormed application features
 - Wrote application assumptions (Sections, professors)
+
 Edward Pei
 - Wrote interface designs for R11, R12
 - Created sample sql queries for R9
@@ -25,15 +30,18 @@ Edward Pei
 - Created sql Triggers
 - Brainstormed application features
 - Wrote application assumptions (Deadlines, Graded Content)
+
 Ricky Lu
 - Wrote interface designs for R13, R14
 - Created sample sql queries for R10
 - Converted E/R diagram to DDL
 - Wrote R2 section
 - Brainstormed application features
+
 Govind Nair
 - Wrote interface designs for R15, R16
 - Created sample sql queries for R6
+- Created sample sql queries for R14
 - contributed to professor e/r diagram section
 - Converted DDL to CREATE TABLES
 - Brainstormed application features

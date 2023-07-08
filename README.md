@@ -95,49 +95,37 @@ The application currently supports the following features:
 1. Configuring the database tables in `DegreeMap/Database/Queries`
 2. Populating the database with the **sample data** using the script in `DegreeMap/Database/PopulateData.js`
 3. Populating the database with the **production data** using the script in `DegreeMap/Database/PopulateData.js`
-   1. Interface with the Waterloo API using the TOKEN in the `.env` file
+    1. Interface with the Waterloo API using the TOKEN in the `.env` file
 4. SQL Query testing for the sample data in `DegreeMap/Database/Queries/TestSample`.
 5. SQL Query testing for the production data in `DegreeMap/Database/Queries/TestProduction`.
 6. Currently supports the SQL queries related to R6 to R11, and R12, R14, R16 for the sample data.
-   1. Both `.sql` and `.out` files for all the features.
-   2. Fancy features R13 and R15 are not related to SQL so they don't have this section.
-7. Currently supports the SQL queries related to R6 to R11, and R12, R14, R16 for the prod data.
-   1. Both `.sql` and `.out` files for all the features.
-   2. Fancy features R13 and R15 are not related to SQL so they don't have this section.
+    1. Both `.sql` and `.out` files for all the features.
+    2. Fancy features R13 and R15 are not related to SQL so they don't have this section.
+7. Currently supports the SQL queries related to R6 to R11, and R12, R14, R16 for the production data.
+    1. Both `.sql` and `.out` files for all the features.
+    2. Fancy features R13 and R15 are not related to SQL so they don't have this section.
 8. Feature interface descriptions for all R6 - R16 in the report
 9.  SQL Scripts in `DegreeMap/Database/Queries`
-   1. Creating database
-   2. Creating tables
-   3. Creating triggers
-   4. Creating procedures
-   5. Dropping tables
-   6. Queries for R6 - R11, R12, R14, R16
-10. Client code `client/`
-   1.  Starting the application
-   2.  R6 - Not implemented
-   3.  R7 - Not implemented
-   4.  R8 - Not implemented
-   5.  R9 - Not implemented
-   6.  R10 - Not implemented
-   7.  R11 - Not implemented
-   8.  R12 - Not implemented
-   9.  R13 - Not implemented
-   10. R14 - Not implemented
-   11. R15 - Not implemented
-   12. R16 - Not implemented
-11. Server code `server/`
-   1.  Starting the application
-   2.  R6 - Not implemented
-   3.  R7 - Not implemented
-   4.  R8 - Not implemented
-   5.  R9 - Not implemented
-   6.  R10 - Not implemented
-   7.  R11 - Not implemented
-   8.  R12 - Not implemented
-   9.  R13 - Not implemented
-   10. R14 - Not implemented
-   11. R15 - Not implemented
-   12. R16 - Not implemented
+    1. Creating database
+    2. Creating tables
+    3.  Creating triggers
+    4.  Creating procedures
+    5.  Dropping tables
+    6.  Queries for R6 - R11, R12, R14, R16
+
+| **Feature**                          | **Frontend**    | **Backend**     |
+|--------------------------------------|-----------------|-----------------|
+| **R6 - User Management**             | Not implemented | Not implemented |
+| **R7 - Course Operations**           | Not implemented | Not implemented |
+| **R8 - User Schedule**               | Not implemented | Not implemented |
+| **R9 - Friend Management**           | Not implemented | Not implemented |
+| **R10 - Taken Courses Management**   | Not implemented | Not implemented |
+| **R11 - Show Courses User Can Take** | Not implemented | Not implemented |
+| **R12 - Pre-requisite graphs**       | Not implemented | Not implemented |
+| **R13 - AI Course Suggestion Model** | Not implemented | Not implemented |
+| **R14 - Graded Content**             | Not implemented | Not implemented |
+| **R15 - SQL Injection / Hashing**    | Not implemented | Not implemented |
+| **R16 - Course Deadlines**           | Not implemented | Not implemented |
 
 # 6. Milestone Reports
 See `MilestoneReports/MX` to view the report PDFs and assets.
