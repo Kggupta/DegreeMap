@@ -91,3 +91,24 @@ BEGIN
     
 END;
 
+CREATE PROCEDURE GetUserEstimatedGrade(
+    IN p_uid INT,
+    IN p_subject VARCHAR(10),
+    IN p_number VARCHAR(10)
+)
+BEGIN
+    DECLARE total_content INT;
+
+    SELECT COUNT(*) INTO total_content
+    FROM GradedContent
+    WHERE uid = p_uid AND subject = p_subject AND course_number = p_number;
+    
+    IF total_content = 0 THEN
+        SELECT NULL;
+    ELSE
+        SELECT SUM(grade * (weight / 100)) AS grade
+        FROM GradedContent
+        WHERE uid = p_uid AND subject = p_subject AND course_number = p_number;
+    END IF;
+
+END;
