@@ -12,6 +12,7 @@ Keshav Gupta
 - Created SQL Procedures for application
 - Brainstormed application features
 - Added sample sql query output screenshots to report
+- Wrote RXc for all features in report
 
 Isshana Mohanakumar
 - Wrote interface designs for R9, R10
