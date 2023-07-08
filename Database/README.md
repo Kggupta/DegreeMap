@@ -12,6 +12,8 @@ PASSWORD="YOUR MYSQL PASSWORD"
 DATABASE_NAME="degreemap"
 HOST="localhost"
 PORT=3306
+APIPORT=3030
+SERVERURL="http://localhost:3030"
 ```
 
 You can get your API Token for the prod data by clicking [here](https://openapi.data.uwaterloo.ca/api-docs/index.html). Simply follow the registration steps and the Token will be emailed to you.
