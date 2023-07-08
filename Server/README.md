@@ -19,3 +19,7 @@ node index.js
 
 # 2. Stopping the API
 1. Use control + C in most systems.
+
+# 3. Features
+
+See the main `DegreeMap/README.md` and the report for the feature list, how to use the API, and which files correspond to which features.
