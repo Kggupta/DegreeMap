@@ -1,0 +1,23 @@
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
++-------------+
+| average_gpa |
++-------------+
+|        NULL |
++-------------+
+1 row in set (0.00 sec)
+
++----------------+
+| four_point_gpa |
++----------------+
+|           NULL |
++----------------+
+1 row in set (0.00 sec)
+
+Empty set (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)

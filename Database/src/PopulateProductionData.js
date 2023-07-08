@@ -198,7 +198,8 @@ async function PopulateProductionData(connection) {
 	// So FKs will be valid
 	
 	antiRequisites.forEach(async antiReq => {
-		if (Courses.some(x => x.subject === antiReq.anti[0] && x.catalogNumber == antiReq.anti[1])) {
+		if (Courses.some(x => x.subjectCode === antiReq.anti[0] && x.catalogNumber == antiReq.anti[1])) {
+			if (antiReq.course[0] == antiReq.anti[0] && antiReq.course[1] == antiReq.anti[1]) return;
 			await InsertData('AntiRequisites', [
 				['subject', strn(antiReq.course[0])],
 				['course_number', strn(antiReq.course[1])],
@@ -209,8 +210,9 @@ async function PopulateProductionData(connection) {
 	})
 
 	preRequisites.forEach(async preReq => {
-		if (Courses.some(x => x.subject === preReq.pre[0] && x.catalogNumber == preReq.pre[1])) {
-			await InsertData('AntiRequisites', [
+		if (Courses.some(x => x.subjectCode === preReq.pre[0] && x.catalogNumber == preReq.pre[1])) {
+			if (preReq.course[0] == preReq.pre[0] && preReq.course[1] == preReq.pre[1]) return;
+			await InsertData('PreRequisites', [
 				['subject', strn(preReq.course[0])],
 				['course_number', strn(preReq.course[1])],
 				['pre_requisite_subject', strn(preReq.pre[0])],

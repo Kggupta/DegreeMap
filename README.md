@@ -23,11 +23,11 @@ DegreeMap uses a MySQL database.
 
 4. Create the database
 
-`CREATE DATABASE degreemap_db;`
+`CREATE DATABASE degreemap;`
 
 5. Use the database
 
-`USE degreemap_db;`
+`USE degreemap;`
 
 # 3. Populate Database
 
@@ -79,7 +79,7 @@ node PopulateData.js prod
 The script will drop the entire existing database tables, recreate the tables, query the prod api, and re-populate the data. You must use the **prod** argument to populate against the production dataset.
 
 # 4. Running The Application
-The application is currently not implemented on the client and server side. At the moment, everything is related to `Database` setup, population, and the SQL queries that will support the UI features that are coming in the next milestone. 
+To start the application, you must first follow all steps to setup and populate the database (described in above sections). Then, start the client and server.
 
 ## 4.1 Running The Client
 See `client/README.md` for step by step directions on how to start the React front-end.
@@ -97,19 +97,47 @@ The application currently supports the following features:
 3. Populating the database with the **production data** using the script in `DegreeMap/Database/PopulateData.js`
    1. Interface with the Waterloo API using the TOKEN in the `.env` file
 4. SQL Query testing for the sample data in `DegreeMap/Database/Queries/TestSample`.
-5. Currently supports the SQL queries related to R6 to R11 for the sample data
-6. Feature interface descriptions for all R6 - R16 in the report
-7. Feature SQL Queries on sample data for R6 - R11
+5. SQL Query testing for the production data in `DegreeMap/Database/Queries/TestProduction`.
+6. Currently supports the SQL queries related to R6 to R11, and R12, R14, R16 for the sample data.
    1. Both `.sql` and `.out` files for all the features.
-8. SQL Scripts in `DegreeMap/Database/Queries`
+   2. Fancy features R13 and R15 are not related to SQL so they don't have this section.
+7. Currently supports the SQL queries related to R6 to R11, and R12, R14, R16 for the prod data.
+   1. Both `.sql` and `.out` files for all the features.
+   2. Fancy features R13 and R15 are not related to SQL so they don't have this section.
+8. Feature interface descriptions for all R6 - R16 in the report
+9.  SQL Scripts in `DegreeMap/Database/Queries`
    1. Creating database
    2. Creating tables
    3. Creating triggers
    4. Creating procedures
    5. Dropping tables
-   6. Queries for R6 - R11
-9. Boilerplate Client code `client/`
-10. Boilerplate Server code `server/`
+   6. Queries for R6 - R11, R12, R14, R16
+10. Client code `client/`
+   1.  Starting the application
+   2.  R6 - Not implemented
+   3.  R7 - Not implemented
+   4.  R8 - Not implemented
+   5.  R9 - Not implemented
+   6.  R10 - Not implemented
+   7.  R11 - Not implemented
+   8.  R12 - Not implemented
+   9.  R13 - Not implemented
+   10. R14 - Not implemented
+   11. R15 - Not implemented
+   12. R16 - Not implemented
+11. Server code `server/`
+   1.  Starting the application
+   2.  R6 - Not implemented
+   3.  R7 - Not implemented
+   4.  R8 - Not implemented
+   5.  R9 - Not implemented
+   6.  R10 - Not implemented
+   7.  R11 - Not implemented
+   8.  R12 - Not implemented
+   9.  R13 - Not implemented
+   10. R14 - Not implemented
+   11. R15 - Not implemented
+   12. R16 - Not implemented
 
 # 6. Milestone Reports
 See `MilestoneReports/MX` to view the report PDFs and assets.
