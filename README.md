@@ -117,7 +117,7 @@ The application currently supports the following features:
 
 | **Feature**                          | **Frontend**    | **Backend**     |
 |--------------------------------------|-----------------|-----------------|
-| **R6 - User Management**             | Not implemented | [server/src/UserRoutes.js](https://github.com/Kggupta/DegreeMap/tree/main/server/src/UserRoutes.js) |
+| **R6 - User Management**             | [Auth](https://github.com/Kggupta/DegreeMap/tree/main/Client/src/pages/auth/) [User Management](https://github.com/Kggupta/DegreeMap/tree/main/Client/src/sections/account/) | [Routes](https://github.com/Kggupta/DegreeMap/tree/main/server/src/UserRoutes.js) |
 | **R7 - Course Operations**           | Not implemented | Not implemented |
 | **R8 - User Schedule**               | Not implemented | Not implemented |
 | **R9 - Friend Management**           | Not implemented | Not implemented |

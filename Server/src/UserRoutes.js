@@ -17,7 +17,7 @@ function UserRoutes(app, connection) {
 		connection.query(query, (error, results, fields) => {
 			if (error || results.length == 0) {
 				if (error.sqlState == PROCEDURE_ERROR) {
-					 return res.send(error.sqlMessage);
+					 return res.status(400).send(error.sqlMessage);
 				}
 				return res.sendStatus(500);
 			}
@@ -40,8 +40,8 @@ function UserRoutes(app, connection) {
 		})
 	})
 	
-	app.route('/User/register/').post((req, res, next) => {
-		const body = req.body;
+	app.route('/User/register/').get((req, res, next) => {
+		const body = req.query;
 		if (!body) return res.sendStatus(400);
 
 		const email = body.email;
@@ -58,7 +58,7 @@ function UserRoutes(app, connection) {
 				}
 				return res.status(500);
 			}
-			res.sendStatus(200);
+			res.json(results[0])
 		})
 	})
 
@@ -77,7 +77,7 @@ function UserRoutes(app, connection) {
 		})
 	})
 
-	app.route('/User/').delete((req, res, next) => {
+	app.route('/User/delete').get((req, res, next) => {
 		const uid = req.query.uid;
 
 		const query = `DELETE FROM User WHERE uid = ${uid};`;
@@ -94,10 +94,10 @@ function UserRoutes(app, connection) {
 		})
 	})
 
-	app.route('/User/').put((req, res) => {
+	app.route('/User/update').get((req, res) => {
 		const uid = req.query.uid;
 
-		const body = req.body;
+		const body = req.query;
 		if (!body) return res.sendStatus(400);
 
 		const name = body.name;
@@ -126,7 +126,7 @@ function UserRoutes(app, connection) {
 		})
 	})
 
-	app.route('/User/admin').put((req, res) => {
+	app.route('/User/admin').get((req, res) => {
 		const uid = req.query.uid;
 		const source = req.query.source;
 
