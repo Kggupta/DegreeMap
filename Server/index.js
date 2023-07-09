@@ -1,11 +1,16 @@
+require('dotenv').config();
+
 const express = require('express')
-const app = express()
-const port = 3000
+const cors = require("cors")
+const connection = require('./database');
+const UserRoutes = require('./src/UserRoutes');
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const app = express();
+app.use(cors());
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+
+UserRoutes(app, connection);
+
+app.listen(process.env.APIPORT, () => {
+  console.log(`Application listening on port ${process.env.APIPORT}`)
+});

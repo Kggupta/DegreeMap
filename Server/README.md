@@ -8,11 +8,22 @@ Currently, the API has no endpoints. They will be implemented in the next milest
 cd DegreeMap/server
 ```
 2. [Install Node and Npm](https://nodejs.org/en/download) if you haven't already.
-3. Install the NPM packages.
+3. Copy the `.env` file you added to `DegreeMap/Database` into `DegreeMap/server` as well.
+```
+TOKEN="YOUR API TOKEN FOR THE PROD DATA"
+USERNAME="YOUR MYSQL USERNAME"
+PASSWORD="YOUR MYSQL PASSWORD"
+DATABASE_NAME="degreemap"
+HOST="localhost"
+PORT=3306
+APIPORT=3030
+SERVERURL="http://localhost:3030"
+```
+4. Install the NPM packages.
 ```
 npm install
 ```
-4. Start the server.
+5. Start the server.
 ```
 node index.js
 ```

@@ -63,6 +63,7 @@ BEGIN
         -- Insert the user
         INSERT INTO User (email, name, password, level)
         VALUES (p_email, p_name, p_password, p_level);
+        SELECT * FROM User WHERE email = p_email LIMIT 1;
     END IF;
     
 END;

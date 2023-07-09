@@ -41,6 +41,8 @@ PASSWORD="YOUR MYSQL PASSWORD"
 DATABASE_NAME="degreemap"
 HOST="localhost"
 PORT=3306
+APIPORT=3030
+SERVERURL="http://localhost:3030"
 ```
 
 You can get your API Token for the prod data by clicking [here](https://openapi.data.uwaterloo.ca/api-docs/index.html). Simply follow the registration steps and the Token will be emailed to you.
@@ -115,7 +117,7 @@ The application currently supports the following features:
 
 | **Feature**                          | **Frontend**    | **Backend**     |
 |--------------------------------------|-----------------|-----------------|
-| **R6 - User Management**             | Not implemented | Not implemented |
+| **R6 - User Management**             | [Auth](https://github.com/Kggupta/DegreeMap/tree/main/Client/src/pages/auth/) [User Management](https://github.com/Kggupta/DegreeMap/tree/main/Client/src/sections/account/) | [Routes](https://github.com/Kggupta/DegreeMap/tree/main/server/src/UserRoutes.js) |
 | **R7 - Course Operations**           | Not implemented | Not implemented |
 | **R8 - User Schedule**               | Not implemented | Not implemented |
 | **R9 - Friend Management**           | Not implemented | Not implemented |
