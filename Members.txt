@@ -13,7 +13,7 @@ Keshav Gupta
 - Brainstormed application features
 - Added sample sql query output screenshots to report
 - Wrote RXc for all features in report
-- Implemented R6,R7
+- Implemented R6,R7,R8
 
 Isshana Mohanakumar
 - Wrote interface designs for R9, R10
@@ -23,7 +23,7 @@ Isshana Mohanakumar
 - Created E/R diagram in MIRO
 - Brainstormed application features
 - Wrote application assumptions (Sections, professors)
-- Wrote R7d report
+- Wrote R7d, R8d report
 
 Edward Pei
 - Wrote interface designs for R11, R12
