@@ -15,29 +15,34 @@ SELECT * FROM Course
 WHERE name LIKE '%Introduction%'
 LIMIT 10;
 
--- Search by everything
+-- Search WILDCARD NOT INFRONT
 SELECT * FROM Course
-WHERE name LIKE '%Introduction%' AND
-subject LIKE '%HRM%' AND
-course_number LIKE '%20%' AND
-description LIKE '%%'
+WHERE name LIKE '%Introduction%' OR
+subject LIKE 'HR%' OR
+course_number LIKE '20%' OR
+description LIKE '%Introduction%'
+LIMIT 10;
+
+-- Search BOTH WILDCARDS AROUND STIRNG
+SELECT * FROM Course
+WHERE name LIKE '%Introduction%' OR
+subject LIKE '%HR%' OR
+course_number LIKE '%20%' OR
+description LIKE '%Introduction%'
 LIMIT 10;
 
 -- Only show courses that have a scheduled section
 SELECT DISTINCT subject, course_number, name, description FROM Course
 NATURAL JOIN Section
-WHERE name LIKE '%Introductio%' AND
-subject LIKE '%CS%' AND
-course_number LIKE '%34%' AND
-description LIKE '%%'
+WHERE name LIKE '%Introductio%' OR
+subject LIKE 'CS%' OR
+description LIKE '%Introductio%'
 LIMIT 10;
 
 SELECT DISTINCT subject, course_number, name, description FROM Course
 NATURAL JOIN Section
-WHERE name LIKE '%Introductio%' AND
-subject LIKE '%HRM%' AND
-course_number LIKE '%200%' AND
-description LIKE '%%'
+WHERE name LIKE '%HR%' OR
+subject LIKE 'HR%' OR
 LIMIT 10;
 
 -- Add course

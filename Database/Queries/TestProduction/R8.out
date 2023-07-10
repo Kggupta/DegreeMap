@@ -1,13 +1,39 @@
-subject	course_number	name	section	start_time	end_time	days	professor_name	type
-ACC	609	Financial Statement Analysis	1	10:00:00	12:50:00	64	Changling Chen	LEC
-ACTSC	221	Introductory Financial Mathematics (Non-Specialist Level)	1	11:30:00	12:20:00	84	Brent Matheson	LEC
-ACTSC	231	Introductory Financial Mathematics	1	14:30:00	15:20:00	84	Keith Freeland	LEC
-ACTSC	232	Life Contingencies 1	1	13:30:00	14:20:00	84	Emily Kozlowski	LEC
-ACTSC	331	Life Contingencies 2	1	10:00:00	11:20:00	80	Emily Kozlowski	LEC
-ACTSC	432	Property and Casualty Insurance: Pricing	1	11:30:00	12:50:00	80	Mirabelle Huynh	LEC
-ACTSC	445	Quantitative Enterprise Risk Management	1	13:00:00	14:20:00	80	Fan Yang	LEC
-ACTSC	631	Financial Mathematics III	1	12:30:00	14:20:00	80	Johnny Li	LEC
-ACTSC	634	Quantitative Risk Management	1	09:30:00	11:20:00	80	Fan Yang	LEC
-ACTSC	635	Profession Communications in Actuarial Science	1	15:00:00	16:50:00	80	Mirabelle Huynh	LEC
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
++---------+---------------+-----------------------------------------------------------+---------+------------+----------+------+-----------------+------+
+| subject | course_number | name                                                      | section | start_time | end_time | days | professor_name  | type |
++---------+---------------+-----------------------------------------------------------+---------+------------+----------+------+-----------------+------+
+| ACC     | 609           | Financial Statement Analysis                              |       1 | 10:00:00   | 12:50:00 |   64 | Changling Chen  | LEC  |
+| ACTSC   | 221           | Introductory Financial Mathematics (Non-Specialist Level) |       1 | 11:30:00   | 12:20:00 |   84 | Brent Matheson  | LEC  |
+| ACTSC   | 231           | Introductory Financial Mathematics                        |       1 | 14:30:00   | 15:20:00 |   84 | Keith Freeland  | LEC  |
+| ACTSC   | 232           | Life Contingencies 1                                      |       1 | 13:30:00   | 14:20:00 |   84 | Emily Kozlowski | LEC  |
+| ACTSC   | 331           | Life Contingencies 2                                      |       1 | 10:00:00   | 11:20:00 |   80 | Emily Kozlowski | LEC  |
+| ACTSC   | 432           | Property and Casualty Insurance: Pricing                  |       1 | 11:30:00   | 12:50:00 |   80 | Mirabelle Huynh | LEC  |
+| ACTSC   | 445           | Quantitative Enterprise Risk Management                   |       1 | 13:00:00   | 14:20:00 |   80 | Fan Yang        | LEC  |
+| ACTSC   | 631           | Financial Mathematics III                                 |       1 | 12:30:00   | 14:20:00 |   80 | Johnny Li       | LEC  |
+| ACTSC   | 634           | Quantitative Risk Management                              |       1 | 09:30:00   | 11:20:00 |   80 | Fan Yang        | LEC  |
+| ACTSC   | 635           | Profession Communications in Actuarial Science            |       1 | 15:00:00   | 16:50:00 |   80 | Mirabelle Huynh | LEC  |
++---------+---------------+-----------------------------------------------------------+---------+------------+----------+------+-----------------+------+
+10 rows in set (1.93 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
++---------+---------------+---------------------------------------------------+---------+------------+----------+------+----------------+------+
+| subject | course_number | name                                              | section | start_time | end_time | days | professor_name | type |
++---------+---------------+---------------------------------------------------+---------+------------+----------+------+----------------+------+
+| COMM    | 101           | Introduction to Financial Markets                 |       1 | 11:30:00   | 12:50:00 |   80 | Olga Kanj      | LEC  |
+| MATBUS  | 371           | Introduction to Corporate Finance                 |       1 | 14:30:00   | 15:50:00 |   80 | Olga Kanj      | LEC  |
+| ME      | 548           | Numerical Control of Machine Tools 1              |       1 | 14:30:00   | 16:20:00 |   64 | Kaan Erkorkmaz | LEC  |
+| CM      | 761           | Computational Inference                           |       1 | 10:00:00   | 11:20:00 |   80 | Ryan Browne    | LEC  |
+| STAT    | 341           | Computational Statistics and Data Analysis        |       1 | 08:30:00   | 09:50:00 |   80 | Ryan Browne    | LEC  |
+| STAT    | 440           | Computational Inference                           |       1 | 10:00:00   | 11:20:00 |   80 | Ryan Browne    | LEC  |
+| STAT    | 840           | Computational Inference                           |       1 | 10:00:00   | 11:20:00 |   80 | Ryan Browne    | LEC  |
+| PHARM   | 111           | Systems Approach to the Study of the Human Body 2 |       1 | 09:00:00   | 10:20:00 |   64 | Jamie Joseph   | LEC  |
+| DAC     | 201           | Designing Digital Images and Interaction          |       1 | 11:30:00   | 12:50:00 |   64 | Betsy Brey     | LEC  |
+| ENGL    | 203           | Designing Digital Images and Interaction          |       1 | 11:30:00   | 12:50:00 |   64 | Betsy Brey     | LEC  |
++---------+---------------+---------------------------------------------------+---------+------------+----------+------+----------------+------+
+10 rows in set (0.62 sec)
 
 Empty set (0.00 sec)

@@ -9,8 +9,11 @@ const mysql2 = require("mysql2");
 async function CreateTables(connection) {
 	console.log("- Creating Tables...")
 	connection.query(readFileSync("./Queries/CreateTables.sql", 'ascii'));
-
+	
 	// Merged these into one file as they closely depend on the tables
+	console.log("- Creating Indexes...")
+	connection.query(readFileSync("./Queries/CreateIndexes.sql", 'ascii'))
+
 	console.log("- Adding Procedures...")
 	connection.query(readFileSync("./Queries/Procedures.sql", 'ascii'));
 }

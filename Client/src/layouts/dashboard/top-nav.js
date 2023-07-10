@@ -7,6 +7,7 @@ import {
   Avatar,
   Badge,
   Box,
+  Button,
   IconButton,
   Stack,
   SvgIcon,
@@ -16,6 +17,10 @@ import {
 import { alpha } from '@mui/material/styles';
 import { usePopover } from 'src/hooks/use-popover';
 import { AccountPopover } from './account-popover';
+import { useUser } from 'src/hooks/use-mocked-user';
+import PlusIcon from '@heroicons/react/24/solid/PlusIcon';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 const SIDE_NAV_WIDTH = 280;
 const TOP_NAV_HEIGHT = 64;
@@ -24,6 +29,12 @@ export const TopNav = (props) => {
   const { onNavOpen } = props;
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   const accountPopover = usePopover();
+  const [open, setOpen] = useState(false);
+  const router = useRouter();
+  const user = useUser();
+  const handleClickOpen = () => {
+    router.push('/createcourse')
+  };
 
   return (
     <>
@@ -65,19 +76,22 @@ export const TopNav = (props) => {
                 </SvgIcon>
               </IconButton>
             )}
-            <Tooltip title="Search">
-              <IconButton>
-                <SvgIcon fontSize="small">
-                  <MagnifyingGlassIcon />
-                </SvgIcon>
-              </IconButton>
-            </Tooltip>
           </Stack>
           <Stack
             alignItems="center"
             direction="row"
             spacing={2}
-          >
+          >         
+          {user?.is_admin == 1 && (
+            <Button
+              size="large"
+              sx={{ mt: 3, margin: '10px' }}
+              variant="contained"
+              onClick={handleClickOpen}
+            >
+              Create Course
+            </Button>
+          )}
             <Avatar
               onClick={accountPopover.handleOpen}
               ref={accountPopover.anchorRef}

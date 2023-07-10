@@ -8,7 +8,8 @@ const PROCEDURE_ERROR = 45000;
  * @param {Connection} connection - MySQL connection
  */
 function UserRoutes(app, connection) {
-
+	// Login user given email and password
+	// Returns the user object or an error
 	app.route('/User/login/').get((req, res) => {
 		const email = req.query.email;
 		const password = req.query.password;
@@ -25,6 +26,7 @@ function UserRoutes(app, connection) {
 		})
 	})
 
+	// Get a user by uid
 	app.route('/User/').get((req, res) => {
 		const uid = req.query.uid;
 		const query = `SELECT * FROM User WHERE uid = ${uid} LIMIT 1;`;
@@ -40,6 +42,7 @@ function UserRoutes(app, connection) {
 		})
 	})
 	
+	// Insert user into database and return their user object
 	app.route('/User/register/').get((req, res, next) => {
 		const body = req.query;
 		if (!body) return res.sendStatus(400);
@@ -62,6 +65,7 @@ function UserRoutes(app, connection) {
 		})
 	})
 
+	// List all users in the database
 	app.route('/User/list/').get((req, res, next) => {
 		const query = `SELECT * FROM User;`;
 
@@ -77,6 +81,7 @@ function UserRoutes(app, connection) {
 		})
 	})
 
+	// Deletes a user from the database
 	app.route('/User/delete').get((req, res, next) => {
 		const uid = req.query.uid;
 
@@ -94,6 +99,7 @@ function UserRoutes(app, connection) {
 		})
 	})
 
+	// Update some of user details such as name, password, level
 	app.route('/User/update').get((req, res) => {
 		const uid = req.query.uid;
 
@@ -126,6 +132,8 @@ function UserRoutes(app, connection) {
 		})
 	})
 
+	// Promote a user to administrator
+	// Requires source to be administrator or else it will return an error
 	app.route('/User/admin').get((req, res) => {
 		const uid = req.query.uid;
 		const source = req.query.source;

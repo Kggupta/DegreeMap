@@ -11,7 +11,7 @@ const Page = () => {
   <>
     <Head>
       <title>
-        Account | Devias Kit
+        Account | DegreeMap
       </title>
     </Head>
     <Box

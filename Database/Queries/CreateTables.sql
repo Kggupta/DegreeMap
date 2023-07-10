@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS User (
 	password VARCHAR(25) NOT NULL,
 	level VARCHAR(2) NOT NULL,
 	is_admin BOOLEAN NOT NULL DEFAULT 0,
+	UNIQUE (email),
 	CONSTRAINT email_chk CHECK (email LIKE '%@uwaterloo.ca'),
 	CONSTRAINT name_chk CHECK (length(name) >= 1),
 	CONSTRAINT password_chk CHECK (length(password) >= 8)

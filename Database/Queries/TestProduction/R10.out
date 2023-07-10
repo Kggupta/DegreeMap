@@ -2,12 +2,28 @@ Query OK, 1 row affected (0.00 sec)
 
 Query OK, 1 row affected (0.00 sec)
 
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
 +-------------+
 | average_gpa |
 +-------------+
 |        NULL |
 +-------------+
 1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
++-------------+
+| average_gpa |
++-------------+
+|        NULL |
++-------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
 
 +----------------+
 | four_point_gpa |
@@ -16,7 +32,17 @@ Query OK, 1 row affected (0.00 sec)
 +----------------+
 1 row in set (0.00 sec)
 
-Empty set (0.01 sec)
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
++----------------+
+| four_point_gpa |
++----------------+
+|           NULL |
++----------------+
+1 row in set (0.00 sec)
+
+Empty set (0.00 sec)
 
 Query OK, 1 row affected (0.00 sec)
 

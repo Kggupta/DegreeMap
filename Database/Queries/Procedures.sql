@@ -113,3 +113,75 @@ BEGIN
     END IF;
 
 END;
+
+CREATE PROCEDURE GetPreReqs(
+    IN p_subject VARCHAR(10),
+    IN p_number VARCHAR(10)
+)
+BEGIN
+    SELECT Course.subject, Course.course_number, name, description 
+	FROM PreRequisites
+	JOIN Course ON Course.subject = PreRequisites.pre_requisite_subject AND 
+		Course.course_number = PreRequisites.pre_requisite_number
+	WHERE PreRequisites.subject = p_subject AND PreRequisites.course_number = p_number;
+END;
+
+CREATE PROCEDURE GetAntiReqs(
+    IN p_subject VARCHAR(10),
+    IN p_number VARCHAR(10)
+)
+BEGIN
+    SELECT Course.subject, Course.course_number, name, description 
+	FROM AntiRequisites
+	JOIN Course ON Course.subject = AntiRequisites.anti_requisite_subject AND 
+		Course.course_number = AntiRequisites.anti_requisite_number
+	WHERE AntiRequisites.subject = p_subject AND AntiRequisites.course_number = p_number;
+END;
+
+CREATE PROCEDURE Search(
+    IN search VARCHAR(500)
+)
+BEGIN
+    SELECT * FROM Course
+    WHERE subject LIKE search OR
+    course_number LIKE search OR
+    name LIKE search OR
+    description LIKE search;
+END;
+
+CREATE PROCEDURE SearchSubject(
+    IN in_subject VARCHAR(10),
+    IN search VARCHAR(500)
+)
+BEGIN
+    SELECT * FROM Course
+    WHERE subject = in_subject AND (
+    course_number LIKE search OR
+    name LIKE search OR
+    description LIKE search);
+END;
+
+CREATE PROCEDURE SearchAvailable(
+    IN search VARCHAR(500)
+)
+BEGIN
+    SELECT DISTINCT subject, course_number, name, description FROM Course
+    NATURAL JOIN Section
+    WHERE subject LIKE search OR
+    course_number LIKE search OR
+    name LIKE search OR
+    description LIKE search;
+END;
+
+CREATE PROCEDURE SearchAvailableSubject(
+    IN in_subject VARCHAR(10),
+    IN search VARCHAR(500)
+)
+BEGIN
+    SELECT DISTINCT subject, course_number, name, description FROM Course
+    NATURAL JOIN Section
+    WHERE subject = in_subject AND (
+    course_number LIKE search OR
+    name LIKE search OR
+    description LIKE search);
+END;
