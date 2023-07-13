@@ -36,7 +36,7 @@ Before you can use either Sample or Production data, you must have already follo
 You also need a `.env` file in `DegreeMap/Database/.env`. This `.env` file requires the following data to be entered correctly:
 ```
 TOKEN="YOUR API TOKEN FOR THE PROD DATA"
-USERNAME="YOUR MYSQL USERNAME"
+APPUSERNAME="YOUR MYSQL USERNAME"
 PASSWORD="YOUR MYSQL PASSWORD"
 DATABASE_NAME="degreemap"
 HOST="localhost"
