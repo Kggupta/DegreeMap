@@ -4,7 +4,7 @@ var connection = new mysql2.createConnection({
 	host: process.env.HOST,
 	port: process.env.PORT,
 	database: process.env.DATABASE_NAME,
-	user: process.env.USERNAME,
+	user: process.env.APPUSERNAME,
 	password: process.env.PASSWORD,
 	multipleStatements: true
 });
