@@ -1,5 +1,5 @@
 import React from "react";
-import {useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import { SERVERURL } from "src/utils/serverurl";
 import axios from "axios";
 import { useUser } from "src/hooks/use-mocked-user";
@@ -16,12 +16,13 @@ import {
 import { UserCard } from "../sections/account/user-card";
 import { FriendCard } from "./friend-card";
 
-
-const Friends = () => {
+const Page = () => {
   const user = useUser();
 
   const [friendEmail, setFriendEmail] = useState("");
   const [friends, setFriends] = useState([null]);
+  const [suggestedFriends, setSuggestedFriends] = useState([null]);
+  const [error, setError] = useState(null);
 
   const handleEmail = (event) => {
     setFriendEmail(event.target.value);
@@ -29,47 +30,57 @@ const Friends = () => {
   };
 
   const getAllFriends = async () => {
-    const data = await axios.get(`${SERVERURL}/Friends/list`, {
-      params: { uid: user.uid },
-    })
-    .then((response) => {    
-        console.log('Response data:', response.data);
+    const data = await axios
+      .get(`${SERVERURL}/Friends/list`, {
+        params: { uid: user.uid },
+      })
+      .then((response) => {
+        console.log("Response data:", response.data);
         setFriends(response.data);
         return response.data;
-    })
-    .catch((error) => {
-        console.log('ERROR: ', error)
+      })
+      .catch((error) => {
+        console.log("ERROR: ", error);
         return error;
-    });
+      });
   };
 
-  const addFriend = async () => {
+  const addFriend = async (email) => {
     console.log(friendEmail);
     const data = await axios
       .get(`${SERVERURL}/Friends/add`, {
-        params: { friendsEmail: friendEmail, uid: user.uid, userEmail: user.email },
+        params: { friendsEmail: email, uid: user.uid, userEmail: user.email },
       })
       .then((response) => {
         getAllFriends();
+        setSuggestedFriends(suggestedFriends.filter((user) => user.email !== email));
+        setError(null);
       })
       .catch((error) => {
+        setError(error);
         console.log(error);
       });
   };
 
-    const suggestFriends = async () => {
-    const data = await axios .get(`${SERVERURL}/Friends/suggested`, {
-            params: { uid: user.uid },
-        })
-        .then((response) => {
-            // console.log(response.data);
-        })
-        .catch((error) => {
-            // console.log(error)
-        });
-    // console.log(data);
-    };
+  const suggestFriends = async () => {
+    const data = await axios
+      .get(`${SERVERURL}/Friends/suggested`, {
+        params: { uid: user.uid },
+      })
+      .then((response) => {
+        console.log("suggested friends: ", response.data);
+        setSuggestedFriends(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    console.log(data);
+  };
 
+  const handleRemoveFriend = async (removedFriendId) => {
+    await getAllFriends();
+    await suggestFriends();
+  };
 
   useEffect(() => {
     getAllFriends();
@@ -96,12 +107,17 @@ const Friends = () => {
               label="Friend Email"
               onChange={handleEmail}
             />
+            {error && (
+              <Typography variant="h6" style={{ margin: "10px", color: "red" }}>
+                {error.response.data}
+              </Typography>
+            )}
             <Button
               size="large"
               fullWidth
               sx={{ width: "95%", mt: 3, margin: "10px" }}
               variant="contained"
-              onClick={addFriend}
+              onClick={() => addFriend(friendEmail)}
             >
               Add Friend
             </Button>
@@ -112,9 +128,37 @@ const Friends = () => {
           {friends && (
             <div>
               <Stack sx={{ padding: "10px", flexDirection: "row", flexWrap: "wrap" }}>
-                {friends.map((user) => (
-                  <FriendCard user={user} />
-                ))}
+                {friends.map(
+                  (user) =>
+                    user && (
+                      <FriendCard
+                        key={user.uid}
+                        user={user}
+                        isSuggested={false}
+                        onAddFriend={addFriend}
+                        onRemoveFriend={handleRemoveFriend}
+                      />
+                    )
+                )}
+              </Stack>
+            </div>
+          )}
+          {suggestedFriends && (
+            <div>
+              <Typography variant="h4">Suggested Friends</Typography>
+              <Stack sx={{ padding: "10px", flexDirection: "row", flexWrap: "wrap" }}>
+                {suggestedFriends.map(
+                  (user) =>
+                    user && (
+                      <FriendCard
+                        key={user.uid}
+                        user={user}
+                        isSuggested={true}
+                        onAddFriend={addFriend}
+                        onRemoveFriend={handleRemoveFriend}
+                      />
+                    )
+                )}
               </Stack>
             </div>
           )}
@@ -124,6 +168,6 @@ const Friends = () => {
   );
 };
 
-Friends.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>;
+Page.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>;
 
-export default Friends;
+export default Page;
