@@ -23,7 +23,6 @@ function FriendRoutes(app, connection) {
       if (error) {
         return res.status(500).send("Error getting friends");
       } else if (results.length == 0) {
-        console.log("NO FIRNDS  FOUND");
         return res.status(400).send("No friends");
       }
       res.json(results);
@@ -96,9 +95,7 @@ function FriendRoutes(app, connection) {
       } else if (results.length == 0) {
         return res.status(400).send("No courses taken together");
       }
-      console.log("PREV TOGETHER RESULTS: ", results);
       res.json(results);
-      // res.json(results.map(result => result.subject));
     });
   });
 
@@ -119,53 +116,13 @@ function FriendRoutes(app, connection) {
         } else if (results.length == 0) {
             return res.status(400).send("No courses taken together");
         }
-        console.log("CURR TOGETHER RESULTS: ", results);
         res.json(results);
-        // res.json(results.map(result => result.subject));
         });
   });
 
   // suggested friends
-  /*
-  SELECT DISTINCT U.uid, U.name, U.email, T.subject, T.course_number
-FROM Takes AS T
-INNER JOIN User AS U ON U.uid = T.uid
-WHERE (T.subject, T.course_number) IN (
-    SELECT subject, course_number
-    FROM Takes
-    WHERE uid = 1
-) AND
-U.uid NOT IN (
-	SELECT uid2 FROM Friends
-	WHERE uid1 = 1
-) AND
-U.uid NOT IN (
-	SELECT uid1 FROM Friends
-	WHERE uid2 = 1
-)
-AND U.uid <> 1;
-
-  */
 
   app.route("/Friends/suggested").get((req, res) => {
-    // const query = `SELECT DISTINCT U.uid, U.name, U.email, T.subject, T.course_number
-    // FROM Takes AS T
-    // INNER JOIN User AS U ON U.uid = T.uid
-    // WHERE (T.subject, T.course_number) IN (
-    //     SELECT subject, course_number
-    //     FROM Takes
-    //     WHERE uid = ${req.query.uid}
-    // ) AND
-    // U.uid NOT IN (
-    //     SELECT uid2 FROM Friends
-    //     WHERE uid1 = ${req.query.uid}
-    // ) AND
-    // U.uid NOT IN (
-    //     SELECT uid1 FROM Friends
-    //     WHERE uid2 = ${req.query.uid}
-    // )
-    // AND U.uid <> ${req.query.uid};`;
-
     const query = `SELECT U.uid, U.name, U.email
     FROM User AS U
     WHERE U.uid IN (
@@ -186,29 +143,11 @@ AND U.uid <> 1;
         WHERE uid2 = ${req.query.uid}
     )
     AND U.uid <> ${req.query.uid};`
-
-
-    // const testQuery = `SELECT * FROM Takes`
-
-    // console.log(testQuery);
-    // connection.query(testQuery, (error, results, fields) => {
-    //     if (error) {
-    //         console.log("BIG PROJELEM");
-    //         return res.status(500).send("Could not get suggested friends");
-    //     }
-    //     console.log(results);
-    //     res.json(results)
-    //     // res.json(results.map(result => result.subject));
-    // });
-
     connection.query(query, (error, results, fields) => {
       if (error) {
-        console.log("BIG PROJELEM");
         return res.status(500).send("Could not get suggested friends");
       }
-      console.log("SUGGESTION RESULTS: ", results);
       res.json(results);
-      // res.json(results.map(result => result.subject));
     });
   });
 }
