@@ -29,8 +29,6 @@ function convertBinaryToDays(binary) {
   return result.join("");
 }
 
-// Takes is COMPLETELY EMPTY!
-
 const searchColumns = [
   {
     field: "id",
@@ -170,7 +168,6 @@ const Page = () => {
   };
 
   React.useEffect(() => {
-
     populateSubjects();
     populateAttending();
   }, []);
@@ -221,7 +218,6 @@ const Page = () => {
       search = courseNumber;
     }
 
-    // Test with CS341 (it it pre-req for a lot of courses)
     const query1 = await axios.get(`${SERVERURL}/Course/search`, {
       params: { availableOnly, subject: selectedSubject, search },
     });
@@ -229,7 +225,6 @@ const Page = () => {
       course.id = course.subject + " " + course.course_number;
       return course;
     });
-
     const query2 = await axios.get(`${SERVERURL}/Plan/eligible-courses`, {
       params: { uid: user.uid },
     });
@@ -237,19 +232,10 @@ const Page = () => {
       course.id = course.subject + " " + course.course_number;
       return course;
     });
-
-    console.log("------ 1 ------");
-    console.log(tempCourses);
-    console.log("------ 2 ------");
-    console.log(tempCourses2);
-
     const elibigleCourses = tempCourses.filter((course1) =>
       tempCourses2.some((course2) => course1.id === course2.id)
     );
-    console.log("------ 3 ------");
-    console.log(elibigleCourses);
 
-    // Run this later after it's sorted through
     for (let i = 0; i < elibigleCourses.length; i++) {
       let preReqs = await axios.get(`${SERVERURL}/Course/prereqs`, {
         params: {
@@ -312,6 +298,7 @@ const Page = () => {
     );
     setAttending([...attending, value]);
   };
+
   const handleUnattend = async (e) => {
     const searching = {
       uid: user.uid,
@@ -489,7 +476,6 @@ const Page = () => {
           rowSelectionModel={rowSelectionModelUnAttend}
         />
       </div>
-
       <div>
         <Dialog open={dialogueOpen} maxWidth="500px">
             <DataGrid
@@ -509,7 +495,6 @@ const Page = () => {
               }}
               rowSelectionModel={sectionRowSelectionModel}
             />
-
           <DialogActions>
             <Button onClick={handleDialogueClose} color="error">
               Cancel
