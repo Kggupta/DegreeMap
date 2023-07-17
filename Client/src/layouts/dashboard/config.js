@@ -45,6 +45,15 @@ export const items = [
         <UserIcon />
       </SvgIcon>
     )
+  },
+  {
+    title: 'Friends',
+    path: '/friends',
+    icon: (
+      <SvgIcon fontSize="small">
+        <UsersIcon />
+      </SvgIcon>
+    )
   }
   // {
   //   title: 'Settings',
