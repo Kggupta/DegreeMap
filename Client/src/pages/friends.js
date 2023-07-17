@@ -35,7 +35,8 @@ const Page = () => {
         params: { uid: user.uid },
       })
       .then((response) => {
-        console.log("Response data:", response.data);
+        console.log("Response friends data:", response.data);
+        console.log("FRIENDS: ", friends);
         setFriends(response.data);
         return response.data;
       })
@@ -51,9 +52,14 @@ const Page = () => {
       .get(`${SERVERURL}/Friends/add`, {
         params: { friendsEmail: email, uid: user.uid, userEmail: user.email },
       })
-      .then((response) => {
-        getAllFriends();
-        setSuggestedFriends(suggestedFriends.filter((user) => user.email !== email));
+      .then(async (response) => {
+        console.log("Response ADD FIRNED data:", response.data);
+        await Promise.all([
+            getAllFriends(),
+            setSuggestedFriends(suggestedFriends.filter((user) => user.email !== email))
+        ]);
+        // getAllFriends();
+        // setSuggestedFriends(suggestedFriends.filter((user) => user.email !== email));
         setError(null);
       })
       .catch((error) => {
@@ -78,6 +84,7 @@ const Page = () => {
   };
 
   const handleRemoveFriend = async (removedFriendId) => {
+    setFriends(friends.filter((friend) => friend.uid !== removedFriendId));
     await getAllFriends();
     await suggestFriends();
   };
