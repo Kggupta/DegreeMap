@@ -122,7 +122,7 @@ The application currently supports the following features:
 | **R8 - User Schedule**               | [Schedule](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/schedule.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/ScheduleRoutes.js) |
 | **R9 - Friend Management**           | Not implemented | Not implemented |
 | **R10 - Taken Courses Management**   | Not implemented | Not implemented |
-| **R11 - Show Courses User Can Take** | Not implemented | Not implemented |
+| **R11 - Show Courses User Can Take** | [Plan](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/plan.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/PlanRoutes.js) |
 | **R12 - Pre-requisite graphs**       | Not implemented | Not implemented |
 | **R13 - AI Course Suggestion Model** | Not implemented | Not implemented |
 | **R14 - Graded Content**             | Not implemented | Not implemented |
