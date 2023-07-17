@@ -13,7 +13,7 @@ Keshav Gupta
 - Brainstormed application features
 - Added sample sql query output screenshots to report
 - Wrote RXc for all features in report
-- Implemented R6,R7,R8
+- Implemented R6,R7,R8,R12
 
 Isshana Mohanakumar
 - Wrote interface designs for R9, R10
@@ -33,6 +33,7 @@ Edward Pei
 - Brainstormed application features
 - Wrote application assumptions (Deadlines, Graded Content)
 - Wrote R6d report
+- Implemented R13 backend
 
 Ricky Lu
 - Wrote interface designs for R13, R14
@@ -49,3 +50,4 @@ Govind Nair
 - Converted DDL to CREATE TABLES
 - Brainstormed application features
 - Wrote application assumptions (Users, Courses)
+- Implemented R9 + wrote report entry
