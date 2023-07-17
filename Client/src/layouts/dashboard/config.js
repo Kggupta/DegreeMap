@@ -7,6 +7,7 @@ import UserIcon from '@heroicons/react/24/solid/UserIcon';
 import UserPlusIcon from '@heroicons/react/24/solid/UserPlusIcon';
 import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import XCircleIcon from '@heroicons/react/24/solid/XCircleIcon';
+import CalendarIcon from '@heroicons/react/24/solid/CalendarDaysIcon';
 import { SvgIcon } from '@mui/material';
 
 export const items = [
@@ -35,6 +36,15 @@ export const items = [
        <SvgIcon fontSize="small">
          <ShoppingBagIcon />
        </SvgIcon>
+    )
+  },
+  {
+    title: 'Plan Courses',
+    path: '/plan',
+    icon: (
+      <SvgIcon fontSize="small">
+        <CalendarIcon />
+      </SvgIcon>
     )
   },
   {
