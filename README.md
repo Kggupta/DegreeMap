@@ -123,8 +123,8 @@ The application currently supports the following features:
 | **R9 - Friend Management**           | [Friend](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/friends.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/FriendRoutes.js) |
 | **R10 - Taken Courses Management**   | Not implemented | Not implemented |
 | **R11 - Show Courses User Can Take** | Not implemented | Not implemented |
-| **R12 - Pre-requisite graphs**       | Not implemented | Not implemented |
-| **R13 - AI Course Suggestion Model** | Not implemented | Not implemented |
+| **R12 - Pre-requisite graphs**       | [Graphs](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/prereqgraph.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/PreReqRoutes.js) |
+| **R13 - AI Course Suggestion Model** | Not implemented | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/RecommenderRoutes.js), [AI Model Scripts](https://github.com/Kggupta/DegreeMap/tree/main/Server/Recommender) |
 | **R14 - Graded Content**             | Not implemented | Not implemented |
 | **R15 - SQL Injection / Hashing**    | Not implemented | Not implemented |
 | **R16 - Course Deadlines**           | Not implemented | Not implemented |
