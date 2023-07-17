@@ -13,7 +13,6 @@ import {
   TextField,
   Button,
 } from "@mui/material";
-import { UserCard } from "../sections/account/user-card";
 import { FriendCard } from "./friend-card";
 
 const Page = () => {
@@ -58,8 +57,6 @@ const Page = () => {
             getAllFriends(),
             setSuggestedFriends(suggestedFriends.filter((user) => user.email !== email))
         ]);
-        // getAllFriends();
-        // setSuggestedFriends(suggestedFriends.filter((user) => user.email !== email));
         setError(null);
       })
       .catch((error) => {
