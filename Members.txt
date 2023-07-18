@@ -24,6 +24,7 @@ Isshana Mohanakumar
 - Brainstormed application features
 - Wrote application assumptions (Sections, professors)
 - Wrote R7d, R8d report
+- Implemented R10 + wrote report entry for part d
 
 Edward Pei
 - Wrote interface designs for R11, R12
