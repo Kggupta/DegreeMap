@@ -11,7 +11,7 @@ cd DegreeMap/server
 3. Copy the `.env` file you added to `DegreeMap/Database` into `DegreeMap/server` as well.
 ```
 TOKEN="YOUR API TOKEN FOR THE PROD DATA"
-USERNAME="YOUR MYSQL USERNAME"
+APPUSERNAME="YOUR MYSQL USERNAME"
 PASSWORD="YOUR MYSQL PASSWORD"
 DATABASE_NAME="degreemap"
 HOST="localhost"

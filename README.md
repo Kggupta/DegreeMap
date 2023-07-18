@@ -36,7 +36,7 @@ Before you can use either Sample or Production data, you must have already follo
 You also need a `.env` file in `DegreeMap/Database/.env`. This `.env` file requires the following data to be entered correctly:
 ```
 TOKEN="YOUR API TOKEN FOR THE PROD DATA"
-USERNAME="YOUR MYSQL USERNAME"
+APPUSERNAME="YOUR MYSQL USERNAME"
 PASSWORD="YOUR MYSQL PASSWORD"
 DATABASE_NAME="degreemap"
 HOST="localhost"
@@ -120,11 +120,11 @@ The application currently supports the following features:
 | **R6 - User Management**             | [Auth](https://github.com/Kggupta/DegreeMap/tree/main/Client/src/pages/auth/), [User Management](https://github.com/Kggupta/DegreeMap/tree/main/Client/src/sections/account/) | [Routes](https://github.com/Kggupta/DegreeMap/tree/main/Server/src/UserRoutes.js) |
 | **R7 - Course Operations**           | [Create](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/createcourse.js), [Search/Delete/List](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/index.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/CourseRoutes.js) |
 | **R8 - User Schedule**               | [Schedule](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/schedule.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/ScheduleRoutes.js) |
-| **R9 - Friend Management**           | Not implemented | Not implemented |
-| **R10 - Taken Courses Management**   | Not implemented | Not implemented |
-| **R11 - Show Courses User Can Take** | Not implemented | Not implemented |
-| **R12 - Pre-requisite graphs**       | Not implemented | Not implemented |
-| **R13 - AI Course Suggestion Model** | Not implemented | Not implemented |
+| **R9 - Friend Management**           | [Friend](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/friends.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/FriendRoutes.js) |
+| **R10 - Taken Courses Management**   | [Manage Taken Courses](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/takecourse.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/TakeCourseRoutes.js) |
+| **R11 - Show Courses User Can Take** | [Plan](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/plan.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/PlanRoutes.js) |
+| **R12 - Pre-requisite graphs**       | [Graphs](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/prereqgraph.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/PreReqRoutes.js) |
+| **R13 - AI Course Suggestion Model** | Not implemented | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/RecommenderRoutes.js), [AI Model Scripts](https://github.com/Kggupta/DegreeMap/tree/main/Server/Recommender) |
 | **R14 - Graded Content**             | Not implemented | Not implemented |
 | **R15 - SQL Injection / Hashing**    | Not implemented | Not implemented |
 | **R16 - Course Deadlines**           | Not implemented | Not implemented |

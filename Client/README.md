@@ -21,7 +21,7 @@ https://nodejs.org/en/download
 3. Copy the `.env` file you added to `DegreeMap/Database` into `DegreeMap/Client` as well.
 ```
 TOKEN="YOUR API TOKEN FOR THE PROD DATA"
-USERNAME="YOUR MYSQL USERNAME"
+APPUSERNAME="YOUR MYSQL USERNAME"
 PASSWORD="YOUR MYSQL PASSWORD"
 DATABASE_NAME="degreemap"
 HOST="localhost"
@@ -39,7 +39,7 @@ yarn install
 ```
 6. Start the Environment
 ```
-yarn start
+yarn dev
 ```
 7. View the application in your browser.
 ```

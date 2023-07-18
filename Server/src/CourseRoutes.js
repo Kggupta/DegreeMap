@@ -12,6 +12,7 @@ function CourseRoutes(app, connection) {
 	// Get all course subjects
 	app.route('/Course/subjects/').get((req, res) => {
 		const query = `SELECT DISTINCT subject FROM Course;`
+		console.log("QUERYING SUBJECTS")
 		console.log(query);
 		connection.query(query, (error, results, fields) => {
 			if (error || results.length == 0) {
