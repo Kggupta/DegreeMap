@@ -121,7 +121,7 @@ The application currently supports the following features:
 | **R7 - Course Operations**           | [Create](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/createcourse.js), [Search/Delete/List](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/index.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/CourseRoutes.js) |
 | **R8 - User Schedule**               | [Schedule](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/schedule.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/ScheduleRoutes.js) |
 | **R9 - Friend Management**           | [Friend](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/friends.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/FriendRoutes.js) |
-| **R10 - Taken Courses Management**   | Not implemented | Not implemented |
+| **R10 - Taken Courses Management**   | [Grades] (https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/takecourse.js) | [Routes] (https://github.com/Kggupta/DegreeMap/blob/main/Server/src/TakeCourseRoutes.js) |
 | **R11 - Show Courses User Can Take** | [Plan](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/plan.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/PlanRoutes.js) |
 | **R12 - Pre-requisite graphs**       | [Graphs](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/prereqgraph.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/PreReqRoutes.js) |
 | **R13 - AI Course Suggestion Model** | Not implemented | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/RecommenderRoutes.js), [AI Model Scripts](https://github.com/Kggupta/DegreeMap/tree/main/Server/Recommender) |
