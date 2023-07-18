@@ -8,6 +8,7 @@ import UserPlusIcon from '@heroicons/react/24/solid/UserPlusIcon';
 import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import XCircleIcon from '@heroicons/react/24/solid/XCircleIcon';
 import CalendarIcon from '@heroicons/react/24/solid/CalendarDaysIcon';
+import CalculatorIcon from '@heroicons/react/24/solid/CalculatorIcon'
 import { SvgIcon } from '@mui/material';
 
 export const items = [
@@ -53,6 +54,24 @@ export const items = [
     icon: (
       <SvgIcon fontSize="small">
         <UserIcon />
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'Friends',
+    path: '/friends',
+    icon: (
+      <SvgIcon fontSize="small">
+        <UsersIcon />
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'Pre-Requisites',
+    path: '/prereqgraph',
+    icon: (
+      <SvgIcon fontSize='small'>
+        <CalculatorIcon/>
       </SvgIcon>
     )
   }
