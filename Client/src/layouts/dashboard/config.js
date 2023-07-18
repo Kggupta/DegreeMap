@@ -49,6 +49,15 @@ export const items = [
     )
   },
   {
+    title: 'Manage Grades',
+    path: '/takecourse',
+    icon: (
+      <SvgIcon fontSize="small">
+        <ShoppingBagIcon />
+      </SvgIcon>
+   )
+  },
+  {
     title: 'Account',
     path: '/account',
     icon: (
