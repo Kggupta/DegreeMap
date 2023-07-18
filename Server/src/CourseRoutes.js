@@ -31,6 +31,7 @@ function CourseRoutes(app, connection) {
 			}
 			res.json(results.map(result => result.course_number));
 		})
+		console.log(res)
 	})
 
 	// Add course
