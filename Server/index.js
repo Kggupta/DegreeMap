@@ -6,6 +6,7 @@ const connection = require('./database');
 const UserRoutes = require('./src/UserRoutes');
 const CourseRoutes = require('./src/CourseRoutes');
 const ScheduleRoutes = require('./src/ScheduleRoutes');
+const PlanRoutes = require('./src/PlanRoutes')
 const FriendRoutes = require('./src/FriendRoutes');
 const RecommenderRoutes = require("./src/RecommenderRoutes");
 const PreReqRoutes = require('./src/PreReqRoutes');
@@ -17,6 +18,7 @@ app.use(cors());
 UserRoutes(app, connection);
 CourseRoutes(app, connection);
 ScheduleRoutes(app, connection);
+PlanRoutes(app, connection);
 FriendRoutes(app, connection);
 RecommenderRoutes(app);
 PreReqRoutes(app, connection);

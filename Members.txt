@@ -41,6 +41,7 @@ Ricky Lu
 - Converted E/R diagram to DDL
 - Wrote R2 section
 - Brainstormed application features
+- Implemented R11 + wrote report entry
 
 Govind Nair
 - Wrote interface designs for R15, R16
