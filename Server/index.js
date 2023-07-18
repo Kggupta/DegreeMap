@@ -10,6 +10,7 @@ const PlanRoutes = require('./src/PlanRoutes')
 const FriendRoutes = require('./src/FriendRoutes');
 const RecommenderRoutes = require("./src/RecommenderRoutes");
 const PreReqRoutes = require('./src/PreReqRoutes');
+const TakeCourseRoutes = require('./src/TakeCourseRoutes');
 
 const app = express();
 app.use(cors());
@@ -22,6 +23,8 @@ PlanRoutes(app, connection);
 FriendRoutes(app, connection);
 RecommenderRoutes(app);
 PreReqRoutes(app, connection);
+TakeCourseRoutes(app, connection);
+
 app.listen(process.env.APIPORT, () => {
   console.log(`Application listening on port ${process.env.APIPORT}`)
 });
