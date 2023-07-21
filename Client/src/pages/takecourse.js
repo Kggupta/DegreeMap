@@ -82,10 +82,14 @@ const Page = () => {
           return;
         }
 
-        const floatGrade = parseFloat(gradeInput);
-        if (isNaN(floatGrade) || floatGrade < 0 || floatGrade > 100) {
-          setError('Invalid Grade. Grade must be a valid float between 0 and 100 inclusive.');
-          return;
+        let gradeToSend = null;
+        if (gradeInput.toUpperCase() !== "CR") {
+          const floatGrade = parseFloat(gradeInput);
+          if (isNaN(floatGrade) || floatGrade < 0 || floatGrade > 100) {
+            setError('Invalid Grade. Grade must be a valid float between 0 and 100 inclusive.');
+            return;
+          }
+          gradeToSend = floatGrade.toFixed(2);
         }
 
         axios.get(`${SERVERURL}/TakeCourse/Taken/`, {
@@ -93,7 +97,7 @@ const Page = () => {
             uid: user.uid,
             subject: selectedSubject,
             course_number: courseNumber.toUpperCase(),
-            grade: floatGrade.toFixed(2),
+            grade: gradeToSend,
             level: user.level,
           },
         })
@@ -102,7 +106,7 @@ const Page = () => {
             id: selectedSubject + ' ' + courseNumber.toUpperCase(),
             subject: selectedSubject,
             course_number: courseNumber.toUpperCase(),
-            grade: floatGrade.toFixed(2),
+            grade: gradeToSend,
             level: user.level,
           };
           updatePage();
@@ -127,26 +131,30 @@ const Page = () => {
     const courseIndex = courses.findIndex((course) => course.id === editCourseId);
     
     if (courseIndex !== -1) {
-      const floatGrade = parseFloat(gradeInput);
-      if (isNaN(floatGrade) || floatGrade < 0 || floatGrade > 100) {
-        setError('Invalid Grade. Grade must be a valid float between 0 and 100 inclusive.');
-        return;
+      let gradeToSend = null;
+      if (gradeInput.toUpperCase() !== "CR") {
+        const floatGrade = parseFloat(gradeInput);
+        if (isNaN(floatGrade) || floatGrade < 0 || floatGrade > 100) {
+          setError('Invalid Grade. Grade must be a valid float between 0 and 100 inclusive.');
+          return;
+        }
+        gradeToSend = floatGrade.toFixed(2);
       }
-  
+
       const updatedCourses = [...courses];
-      updatedCourses[courseIndex].grade = floatGrade.toFixed(2);
+      updatedCourses[courseIndex].grade = gradeToSend;
       setCourses(updatedCourses);
       setEditCourseId("");
       setGradeInput("");
       setError(null);
-  
+
       // Send the updated course information to the server
       axios.get(`${SERVERURL}/TakeCourse/update`, {
         params: {
           uid: user.uid,
           subject: updatedCourses[courseIndex].subject,
           course_number: updatedCourses[courseIndex].course_number,
-          grade: floatGrade,
+          grade: gradeToSend,
         },
       })
       .then(() => {
@@ -181,7 +189,7 @@ const Page = () => {
     axios.get(`${SERVERURL}/TakeCourse/four_point_gpa/`, { params: { uid: user.uid } })
       .then(response => {
         const fourPointGPA = response.data[0].four_point_gpa;
-        setFourPointGPA(fourPointGPA);
+        setFourPointGPA(fourPointGPA !== null ? fourPointGPA : 0);
       })
       .catch(error => console.error(error));
   };
@@ -190,7 +198,7 @@ const Page = () => {
     axios.get(`${SERVERURL}/TakeCourse/percent_gpa/`, { params: { uid: user.uid } })
       .then(response => {
         const cumulativePercentageGPA = response.data[0].average_gpa;
-        setCumulativePercentageGPA(cumulativePercentageGPA);
+        setCumulativePercentageGPA(cumulativePercentageGPA !== null ? cumulativePercentageGPA : 0);
       })
       .catch(error => console.error(error));
   };
@@ -227,6 +235,11 @@ const Page = () => {
   useEffect(() => {
     updatePage();
   }, []);
+
+  const handleCancelEditCourse = () => {
+    setEditCourseId("");
+    setGradeInput("");
+  };
 
   return (
     <>
@@ -348,11 +361,12 @@ const Page = () => {
               Save
             </Button>
             <Button
-              variant="contained"
-              color="error"
-              onClick={handleDeleteCourseRow}
+              variant="outlined"
+              color="primary"
+              onClick={handleCancelEditCourse}
+              style={{ marginRight: '10px' }}
             >
-              Delete
+              Cancel
             </Button>
           </Box>
         </div>

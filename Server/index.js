@@ -18,6 +18,7 @@ app.use(cors());
 // Register routes
 UserRoutes(app, connection);
 CourseRoutes(app, connection);
+TakeCourseRoutes(app, connection);
 ScheduleRoutes(app, connection);
 PlanRoutes(app, connection);
 FriendRoutes(app, connection);

@@ -3,6 +3,7 @@ import CogIcon from '@heroicons/react/24/solid/CogIcon';
 import LockClosedIcon from '@heroicons/react/24/solid/LockClosedIcon';
 import PlusIcon from '@heroicons/react/24/solid/PlusIcon';
 import ShoppingBagIcon from '@heroicons/react/24/solid/ShoppingBagIcon';
+import GradingIcon from '@heroicons/react/24/solid/AcademicCapIcon';
 import UserIcon from '@heroicons/react/24/solid/UserIcon';
 import UserPlusIcon from '@heroicons/react/24/solid/UserPlusIcon';
 import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
@@ -53,7 +54,7 @@ export const items = [
     path: '/takecourse',
     icon: (
       <SvgIcon fontSize="small">
-        <ShoppingBagIcon />
+        <GradingIcon />
       </SvgIcon>
    )
   },
