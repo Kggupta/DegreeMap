@@ -14,19 +14,12 @@ const columns = [
   {
     field: 'grade',
     headerName: 'Grade',
-    width: 200,
-    editable: (params) => params.row.grade !== null, // Make the "Grade" column editable only if grade is not null
-    renderCell: (params) => {
-      const { row } = params;
-      return row.grade !== null ? (
-        <TextField
-          value={params.row.grade}
-          onChange={(e) => setGradeInput(e.target.value)}
-        />
-      ) : (
-        <Typography>CR</Typography>
-      );
-    },
+    width: 200
+  },
+  {
+    field: 'nextcourse',
+    headerName: 'Next Recommended Course',
+    width: 200
   },
   { field: 'level', headerName: 'Level', width: 150 },
 ];
@@ -212,24 +205,26 @@ const Page = () => {
       .catch(error => console.error(error));
   };
 
-  const updatePage = () => {
-    axios.get(`${SERVERURL}/TakeCourse/grades`, { params: { uid: user.uid } })
-      .then(response => {
-        const userCourses = response.data.map(course => {
-          return {
-            id: course.subject + ' ' + course.course_number,
-            subject: course.subject,
-            course_number: course.course_number,
-            grade: course.grade,
-            level: course.level,
-          };
-        });
-        setCourses(userCourses);
-        fetchCumulativePercentageGPA();
-        fetchFourPointGPA();
-        fetchUserRank();
+  const updatePage = async () => {
+    const response = await axios.get(`${SERVERURL}/TakeCourse/grades`, { params: { uid: user.uid } })
+    const userCourses = response.data.map(async course => {
+      const suggested = await axios.get(`${SERVERURL}/Recommender/subject/same`, {
+        params: {subject: course.subject, number: course.course_number}
       })
-      .catch(error => console.error(error));
+
+      return {
+        id: course.subject + ' ' + course.course_number,
+        subject: course.subject,
+        course_number: course.course_number,
+        grade: course.grade,
+        level: course.level,
+        nextcourse: suggested.data.length > 0 ? suggested.data[0] : "None"
+      };
+    });
+    setCourses(await Promise.all(userCourses));
+    fetchCumulativePercentageGPA();
+    fetchFourPointGPA();
+    fetchUserRank();
   };
 
   useEffect(() => {
@@ -238,7 +233,6 @@ const Page = () => {
 
   const handleCancelEditCourse = () => {
     setEditCourseId("");
-    setGradeInput("");
   };
 
   return (

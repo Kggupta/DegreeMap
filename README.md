@@ -124,7 +124,7 @@ The application currently supports the following features:
 | **R10 - Taken Courses Management**   | [Manage Taken Courses](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/takecourse.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/TakeCourseRoutes.js) |
 | **R11 - Show Courses User Can Take** | [Plan](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/plan.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/PlanRoutes.js) |
 | **R12 - Pre-requisite graphs**       | [Graphs](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/prereqgraph.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/PreReqRoutes.js) |
-| **R13 - AI Course Suggestion Model** | Not implemented | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/RecommenderRoutes.js), [AI Model Scripts](https://github.com/Kggupta/DegreeMap/tree/main/Server/Recommender) |
+| **R13 - AI Course Suggestion Model** | [Course Suggestion UI](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/takecourse.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/RecommenderRoutes.js), [AI Model Scripts](https://github.com/Kggupta/DegreeMap/tree/main/Server/Recommender) |
 | **R14 - Graded Content**             | Not implemented | Not implemented |
 | **R15 - SQL Injection / Hashing**    | Not implemented | Not implemented |
 | **R16 - Course Deadlines**           | Not implemented | Not implemented |

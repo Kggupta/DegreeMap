@@ -18,7 +18,7 @@ function RecommenderRoutes(app) {
         numberStr = req.query.number;
         numberInt = parseInt(numberStr);
         courseCode = subject + numberStr;
-        empty = {};
+        empty = [];
 
         if (!(courseCode in gradRanks) && !(courseCode in undergradRanks)) {
             res.json(empty)
@@ -47,17 +47,18 @@ function RecommenderRoutes(app) {
     // get a set of recommended course from a only different subject areas
     // (This provide results that don't make sense some times)
     app.route('/Recommender/subject/different').get((req, res) => {
-
+        console.log(req.query)
         subject = req.query.subject;
         numberStr = req.query.number;
         numberInt = parseInt(numberStr);
         courseCode = subject + numberStr;
-        empty = {};
+        empty = [];
 
         if (!(courseCode in gradRanks) && !(courseCode in undergradRanks)) {
+            console.log("Cancel Course Suggestion")
             res.json(empty)
         } else {
-            
+            console.log("Fetching course suggestion")
             if (numberInt > 499) {
                 ranks = gradRanks[courseCode];
             } else {
