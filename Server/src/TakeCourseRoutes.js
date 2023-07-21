@@ -11,7 +11,13 @@ const PROCEDURE_ERROR = 45000;
 function TakeCourseRoutes(app, connection) {
 	// Add Taken Course
 	app.route('/TakeCourse/Taken/').get((req, res) => {
-		const query = `INSERT INTO Takes (uid,subject,course_number,grade,level) VALUES (${req.query.uid}, "${req.query.subject}", "${req.query.course_number}", ${req.query.grade}, "${req.query.level}")`
+		query = ""
+		if (req.query.grade != undefined) {
+			query = `INSERT INTO Takes (uid,subject,course_number,grade,level) VALUES (${req.query.uid}, "${req.query.subject}", "${req.query.course_number}", ${req.query.grade}, "${req.query.level}")`
+		} else {
+			query = `INSERT INTO Takes (uid,subject,course_number,grade,level) VALUES (${req.query.uid}, "${req.query.subject}", "${req.query.course_number}", NULL, "${req.query.level}")`
+		}
+		
 		console.log(query);
 		connection.query(query, (error, results, fields) => {
 			if (error) {

@@ -5,7 +5,6 @@ const cors = require("cors")
 const connection = require('./database');
 const UserRoutes = require('./src/UserRoutes');
 const CourseRoutes = require('./src/CourseRoutes');
-const TakeCourseRoutes = require('./src/TakeCourseRoutes');
 const ScheduleRoutes = require('./src/ScheduleRoutes');
 const PlanRoutes = require('./src/PlanRoutes')
 const FriendRoutes = require('./src/FriendRoutes');
