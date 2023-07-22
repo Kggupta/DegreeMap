@@ -1,7 +1,7 @@
 uid,email,name,password,level,is_admin
-1,"k44gupta@uwaterloo.ca","Keshav Gupta","password","3B",1
-2,"imohanak@uwaterloo.ca","Isshana Mohanakumar","blahblah2","3A",1
-3,"epei@uwaterloo.ca","Edward Pei","qwerty000","2A",1
-4,"rklu@uwaterloo.ca","Rui Kai Lu","fdsa1234","3B",1
-5,"g4nair@uwaterloo.ca","Govind Nair","asdf1234","1A",1
-6,"dummy@uwaterloo.ca","Dummy User","password1","1A",0
+1,"k44gupta@uwaterloo.ca","Keshav Gupta","037e94baa9506c5ba26bd3bbaa3684b933192040620ebce309ff1e8442d5463ce406cee23465ca5f93c3210754b7ad6005cafd3fcf1a75fdd6f654586767d1f5","3B",1
+2,"imohanak@uwaterloo.ca","Isshana Mohanakumar","037e94baa9506c5ba26bd3bbaa3684b933192040620ebce309ff1e8442d5463ce406cee23465ca5f93c3210754b7ad6005cafd3fcf1a75fdd6f654586767d1f5","3A",1
+3,"epei@uwaterloo.ca","Edward Pei","037e94baa9506c5ba26bd3bbaa3684b933192040620ebce309ff1e8442d5463ce406cee23465ca5f93c3210754b7ad6005cafd3fcf1a75fdd6f654586767d1f5","2A",1
+4,"rklu@uwaterloo.ca","Rui Kai Lu","037e94baa9506c5ba26bd3bbaa3684b933192040620ebce309ff1e8442d5463ce406cee23465ca5f93c3210754b7ad6005cafd3fcf1a75fdd6f654586767d1f5","3B",1
+5,"g4nair@uwaterloo.ca","Govind Nair","037e94baa9506c5ba26bd3bbaa3684b933192040620ebce309ff1e8442d5463ce406cee23465ca5f93c3210754b7ad6005cafd3fcf1a75fdd6f654586767d1f5","1A",1
+6,"dummy@uwaterloo.ca","Dummy User","037e94baa9506c5ba26bd3bbaa3684b933192040620ebce309ff1e8442d5463ce406cee23465ca5f93c3210754b7ad6005cafd3fcf1a75fdd6f654586767d1f5","1A",0

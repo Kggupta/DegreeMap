@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useReducer, useRef } from 'react'
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { SERVERURL } from 'src/utils/serverurl';
-
+const crypto = require("crypto")
 const HANDLERS = {
   INITIALIZE: 'INITIALIZE',
   SIGN_IN: 'SIGN_IN',
@@ -98,7 +98,7 @@ export const AuthProvider = (props) => {
   const signIn = async (email, password) => {
     try {
       const res = await axios.get(`${SERVERURL}/User/login/`, {
-        params: {email, password}
+        params: {email, password: crypto.pbkdf2Sync(password, "", 1000, 64, 'sha512').toString('hex')}
       })
       try {
         window.sessionStorage.setItem('authenticated', 'true');
@@ -121,7 +121,7 @@ export const AuthProvider = (props) => {
     }
     try {
       const res = await axios.get(`${SERVERURL}/User/register/`, {
-        params: {email, name, password, level}
+        params: {email, name, password: crypto.pbkdf2Sync(password, "", 1000, 64, 'sha512').toString('hex'), level}
       })
       try {
         window.sessionStorage.setItem('authenticated', 'true');

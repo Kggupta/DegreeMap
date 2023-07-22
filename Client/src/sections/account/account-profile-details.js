@@ -21,6 +21,7 @@ import { useFormik } from 'formik';
 const YEARS = [1,2,3,4];
 const LEVELS = ["A", "B"];
 import * as Yup from 'yup';
+const crypto = require('crypto');
 
 export const AccountProfileDetails = () => {
   let user = useUser();
@@ -60,7 +61,7 @@ export const AccountProfileDetails = () => {
           throw new Error('Passwords Must Match');
 
         await axios.get(`${SERVERURL}/User/update`, {
-          params: {uid: user.uid, name: values.name, password: values.password,
+          params: {uid: user.uid, name: values.name, password: crypto.pbkdf2Sync(values.password, "", 1000, 64, 'sha512').toString('hex'),
                     level: values.level}
         })
         helpers.setStatus({success: true})

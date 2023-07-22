@@ -45,7 +45,7 @@ END;
 CREATE PROCEDURE InsertUser(
     IN p_email VARCHAR(50),
     IN p_name VARCHAR(50),
-    IN p_password VARCHAR(25),
+    IN p_password VARCHAR(200),
     IN p_level VARCHAR(2)
 )
 BEGIN
@@ -70,7 +70,7 @@ END;
 
 CREATE PROCEDURE GetUserByEmailAndPassword(
     IN p_email VARCHAR(50),
-    IN p_password VARCHAR(25)
+    IN p_password VARCHAR(200)
 )
 BEGIN
     DECLARE user_count INT;
