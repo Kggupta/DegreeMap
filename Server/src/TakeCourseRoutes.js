@@ -13,9 +13,9 @@ function TakeCourseRoutes(app, connection) {
 	app.route('/TakeCourse/Taken/').get((req, res) => {
 		query = ""
 		if (req.query.grade != undefined) {
-			query = `INSERT INTO Takes (uid,subject,course_number,grade,level) VALUES (${req.query.uid}, "${req.query.subject}", "${req.query.course_number}", ${req.query.grade}, "${req.query.level}")`
+			query = `INSERT INTO Takes (uid,subject,course_number,grade,level) VALUES (${req.query.uid}, ${connection.escape(req.query.subject)}, ${connection.escape(req.query.course_number)}, ${req.query.grade}, "${req.query.level}")`
 		} else {
-			query = `INSERT INTO Takes (uid,subject,course_number,grade,level) VALUES (${req.query.uid}, "${req.query.subject}", "${req.query.course_number}", NULL, "${req.query.level}")`
+			query = `INSERT INTO Takes (uid,subject,course_number,grade,level) VALUES (${req.query.uid}, ${connection.escape(req.query.subject)}, ${connection.escape(req.query.course_number)}, NULL, "${req.query.level}")`
 		}
 		
 		console.log(query);
@@ -35,7 +35,7 @@ function TakeCourseRoutes(app, connection) {
 
     // Remove a Taken Course
 	app.route('/TakeCourse/untaken/').get((req, res) => {
-		const query = `DELETE FROM Takes WHERE uid = ${req.query.uid} AND subject="${req.query.subject}" AND course_number="${req.query.course_number}";`
+		const query = `DELETE FROM Takes WHERE uid = ${req.query.uid} AND subject=${connection.escape(req.query.subject)} AND course_number=${connection.escape(req.query.course_number)};`
 		console.log(query);
 		connection.query(query, (error, results, fields) => {
 			if (error) {
@@ -66,8 +66,8 @@ function TakeCourseRoutes(app, connection) {
 		const uid = req.query.uid;
 		const body = req.query;
 		if (!body) return res.sendStatus(400);
-		const subject = body.subject;
-		const course_number = body.course_number;
+		const subject = connection.escape(body.subject);
+		const course_number = connection.escape(body.course_number);
 		const grade = body.grade;
 
 		if (!grade || !subject || !course_number) {
@@ -76,7 +76,7 @@ function TakeCourseRoutes(app, connection) {
 
 		var query = `UPDATE Takes SET `;
 		query += `grade = ${grade} `
-		query += `WHERE uid = ${uid} AND course_number = '${course_number}' AND subject = '${subject}';`
+		query += `WHERE uid = ${uid} AND course_number = ${course_number} AND subject = ${subject};`
 		
 		console.log(query);
 		connection.query(query, (error, results) => {

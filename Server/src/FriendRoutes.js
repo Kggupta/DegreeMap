@@ -2,12 +2,6 @@ const { Express } = require("express");
 const { Connection } = require("mysql2");
 const PROCEDURE_ERROR = 45000;
 
-// Ensure email is a valid uwaterloo email syntax wise
-function validateEmail(email) {
-  var re = /^[a-zA-Z0-9._%+-]+@uwaterloo\.ca$/;
-  return re.test(String(email).toLowerCase());
-}
-
 /**
  * Registers all friend routes
  *
@@ -32,17 +26,14 @@ function FriendRoutes(app, connection) {
   // add friend
   app.route("/Friends/add").get((req, res) => {
     console.log("PRINTING BODY: " + req.query.friendsEmail);
-    const friendEmail = req.query.friendsEmail;
-    const userEmail = req.query.userEmail;
-    if (validateEmail(friendEmail) == false) {
-      return res.status(400).send("Invalid email");
-    }
+    const friendEmail = connection.escape(req.query.friendsEmail);
+    const userEmail = connection.escape(req.query.userEmail);
 
     if (friendEmail == userEmail) {
       return res.status(400).send("You cannot add yourself as a friend");
     }
 
-    const uidQuery = `SELECT uid FROM User WHERE email = "${friendEmail}" AND uid NOT IN (SELECT uid2 FROM Friends WHERE uid1 = ${req.query.uid});`;
+    const uidQuery = `SELECT uid FROM User WHERE email = ${friendEmail} AND uid NOT IN (SELECT uid2 FROM Friends WHERE uid1 = ${req.query.uid});`;
     console.log(uidQuery);
     connection.query(uidQuery, (error, results, fields) => {
       if (error) {

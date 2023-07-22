@@ -26,7 +26,7 @@ function GradedContent(app, connection) {
 	// Insert graded content
 	app.route('/GradedContent/insert/').get((req, res) => {
 		const query = `INSERT INTO GradedContent(uid, subject, course_number, name, grade, weight) VALUES ` +
-		`(${req.query.uid}, "${req.query.subject}", "${req.query.course_number}", "${req.query.name}", ${req.query.grade}, ${req.query.weight});`
+		`(${req.query.uid}, ${connection.escape(req.query.subject)}, ${connection.escape(req.query.course_number)}, ${connection.escape(req.query.name)}, ${req.query.grade}, ${req.query.weight});`
 		console.log(query);
 		connection.query(query, (error, results, fields) => {
 			if (error) {
@@ -40,7 +40,7 @@ function GradedContent(app, connection) {
 	// Delete graded content
 	app.route('/GradedContent/delete/').get((req, res) => {
 		const query = `DELETE FROM GradedContent WHERE ` + 
-		`uid = ${req.query.uid} AND subject = "${req.query.subject}" AND course_number="${req.query.course_number}" AND name = "${req.query.name}"`
+		`uid = ${req.query.uid} AND subject = ${connection.escape(req.query.subject)} AND course_number=${connection.escape(req.query.course_number)} AND name = ${connection.escape(req.query.name)}`
 		console.log(query);
 		connection.query(query, (error, results, fields) => {
 			if (error) {
@@ -52,7 +52,7 @@ function GradedContent(app, connection) {
 
 	// Estimate course grade so far
 	app.route('/GradedContent/estimate/').get((req, res) => {
-		const query = `CALL GetUserEstimatedGrade(${req.query.uid}, "${req.query.subject}", "${req.query.course_number}");`
+		const query = `CALL GetUserEstimatedGrade(${req.query.uid}, ${connection.escape(req.query.subject)}, ${connection.escape(req.query.course_number)});`
 		console.log(query);
 		connection.query(query, (error, results, fields) => {
 			if (error) {

@@ -13,7 +13,7 @@ function UserRoutes(app, connection) {
 	app.route('/User/login/').get((req, res) => {
 		const email = req.query.email;
 		const password = req.query.password;
-		const query = `CALL GetUserByEmailAndPassword("${email}","${password}");`;
+		const query = `CALL GetUserByEmailAndPassword(${connection.escape(email)},${connection.escape(password)});`;
 		console.log(query);
 		connection.query(query, (error, results, fields) => {
 			if (error || results.length == 0) {
@@ -47,12 +47,12 @@ function UserRoutes(app, connection) {
 		const body = req.query;
 		if (!body) return res.sendStatus(400);
 
-		const email = body.email;
-		const name = body.name;
-		const password = body.password;
-		const level = body.level;
+		const email = connection.escape(body.email);
+		const name = connection.escape(body.name);
+		const password = connection.escape(body.password);
+		const level = connection.escape(body.level);
 
-		const query = `CALL InsertUser("${email}", "${name}", "${password}", "${level}");`;
+		const query = `CALL InsertUser(${email}, ${name}, ${password}, ${level});`;
 		console.log(query);
 		connection.query(query, (error, results, fields) => {
 			if (error) {
@@ -106,18 +106,18 @@ function UserRoutes(app, connection) {
 		const body = req.query;
 		if (!body) return res.sendStatus(400);
 
-		const name = body.name;
-		const password = body.password;
-		const level = body.level;
+		const name = connection.escape(body.name);
+		const password = connection.escape(body.password);
+		const level = connection.escape(body.level);
 
 		if (!name || !password || !level) {
 			return res.sendStatus(400).send('Invalid body.');
 		}
 
 		var query = `UPDATE User SET `;
-		query += `name = "${name}", `
-		query += `password = "${password}", `
-		query += `level = "${level}" `
+		query += `name = ${name}, `
+		query += `password = ${password}, `
+		query += `level = ${level} `
 		query += `\nWHERE uid = ${uid};`
 		
 		console.log(query);

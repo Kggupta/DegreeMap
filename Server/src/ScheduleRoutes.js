@@ -35,7 +35,7 @@ function ScheduleRoutes(app, connection) {
 
 	// Attend section
 	app.route('/Section/attend/').get((req, res) => {
-		const query = `INSERT INTO Attends (uid, section, subject, course_number) VALUES (${req.query.uid}, ${req.query.section}, "${req.query.subject}", "${req.query.course_number}")`
+		const query = `INSERT INTO Attends (uid, section, subject, course_number) VALUES (${req.query.uid}, ${req.query.section}, ${connection.escape(req.query.subject)}, ${connection.escape(req.query.course_number)})`
 		
 		console.log(query);
 		connection.query(query, (error, results, fields) => {
@@ -51,7 +51,7 @@ function ScheduleRoutes(app, connection) {
 
 	// Un-Attend section
 	app.route('/Section/unattend/').get((req, res) => {
-		const query = `DELETE FROM Attends WHERE uid = ${req.query.uid} AND section=${req.query.section} AND subject="${req.query.subject}" AND course_number="${req.query.course_number}";`
+		const query = `DELETE FROM Attends WHERE uid = ${req.query.uid} AND section=${req.query.section} AND subject=${connection.escape(req.query.subject)} AND course_number=${connection.escape(req.query.course_number)};`
 		
 		console.log(query);
 		connection.query(query, (error, results, fields) => {
@@ -67,7 +67,7 @@ function ScheduleRoutes(app, connection) {
 
 	// Get sections conflicting with given course section
 	app.route('/Section/conflicting/').get((req, res) => {
-		const getSection = `SELECT * FROM Section WHERE section = ${req.query.section} AND subject = "${req.query.subject}" AND course_number = "${req.query.course_number}";`
+		const getSection = `SELECT * FROM Section WHERE section = ${req.query.section} AND subject = ${connection.escape(req.query.subject)} AND course_number = ${connection.escape(req.query.course_number)};`
 		
 		console.log(getSection);
 		connection.query(getSection, (error, results, fields) => {
@@ -114,7 +114,7 @@ function ScheduleRoutes(app, connection) {
 		+ " FROM Course"
 		+ " JOIN Section ON Section.subject = Course.subject AND Section.course_number = Course.course_number"
 		+ " INNER JOIN Professor ON Section.professor_id = Professor.uid"
-		+ ` WHERE Section.subject="${req.query.subject}" AND Section.course_number="${req.query.course_number}";`
+		+ ` WHERE Section.subject=${connection.escape(req.query.subject)} AND Section.course_number=${connection.escape(req.query.course_number)};`
 		
 		console.log(query);
 		connection.query(query, (error, results, fields) => {

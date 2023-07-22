@@ -12,7 +12,7 @@ function PreReqRoutes(app, connection) {
 		const query = "WITH RECURSIVE cte_prerequisites AS ( "
 			+ "SELECT * "
 			+ "FROM PreRequisites "
-			+ `WHERE subject = '${req.query.subject}' AND course_number = '${req.query.number}' `
+			+ `WHERE subject = ${connection.escape(req.query.subject)} AND course_number = ${connection.escape(req.query.number)} `
 			+ "UNION ALL "
 			
 			+ "SELECT P.subject, P.course_number, P.pre_requisite_subject, P.pre_requisite_number "
