@@ -81,6 +81,15 @@ export const items = [
     path: '/prereqgraph',
     icon: (
       <SvgIcon fontSize='small'>
+        <ChartBarIcon/>
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'Graded Content',
+    path: '/gradedcontent',
+    icon: (
+      <SvgIcon fontSize='small'>
         <CalculatorIcon/>
       </SvgIcon>
     )

@@ -95,7 +95,7 @@ const attendColumns = [
     valueGetter: (params) =>
       params.row.location_room && params.row.location_building
         ? `${params.row.location_room}${params.row.location_building}`
-        : "Nne",
+        : "None",
   },
 ];
 

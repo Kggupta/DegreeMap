@@ -47,7 +47,6 @@ function RecommenderRoutes(app) {
     // get a set of recommended course from a only different subject areas
     // (This provide results that don't make sense some times)
     app.route('/Recommender/subject/different').get((req, res) => {
-        console.log(req.query)
         subject = req.query.subject;
         numberStr = req.query.number;
         numberInt = parseInt(numberStr);

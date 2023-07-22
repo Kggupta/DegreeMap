@@ -11,6 +11,7 @@ const FriendRoutes = require('./src/FriendRoutes');
 const RecommenderRoutes = require("./src/RecommenderRoutes");
 const PreReqRoutes = require('./src/PreReqRoutes');
 const TakeCourseRoutes = require('./src/TakeCourseRoutes');
+const GradedContent = require('./src/GradedContentRoutes');
 
 const app = express();
 app.use(cors());
@@ -25,6 +26,7 @@ FriendRoutes(app, connection);
 RecommenderRoutes(app);
 PreReqRoutes(app, connection);
 TakeCourseRoutes(app, connection);
+GradedContent(app, connection);
 
 app.listen(process.env.APIPORT, () => {
   console.log(`Application listening on port ${process.env.APIPORT}`)

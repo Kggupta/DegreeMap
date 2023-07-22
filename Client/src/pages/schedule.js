@@ -59,14 +59,14 @@ const Page = () => {
     setSubjects(data.data);
   }
   const populateAttending = async () => {
-	const data = await axios.get(`${SERVERURL}/Section/attending`, {
-		params: {uid: user.uid}
-	})
-	console.log(data.data);
-	setAttending(data.data.map(course => {
-		course.id = course.subject + ' ' + course.course_number + ' ' + course.section;
-		return course;
-	}));
+    const data = await axios.get(`${SERVERURL}/Section/attending`, {
+      params: {uid: user.uid}
+    })
+    console.log(data.data);
+    setAttending(data.data.map(course => {
+      course.id = course.subject + ' ' + course.course_number + ' ' + course.section;
+      return course;
+    }));
   }
 
   React.useEffect(() => {
