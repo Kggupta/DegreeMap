@@ -126,7 +126,7 @@ The application currently supports the following features:
 | **R12 - Pre-requisite graphs**       | [Graphs](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/prereqgraph.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/PreReqRoutes.js) |
 | **R13 - AI Course Suggestion Model** | [Course Suggestion UI](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/takecourse.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/RecommenderRoutes.js), [AI Model Scripts](https://github.com/Kggupta/DegreeMap/tree/main/Server/Recommender) |
 | **R14 - Graded Content**             | [Graded Content](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/gradedcontent.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/GradedContentRoutes.js) |
-| **R15 - SQL Injection / Hashing**    | Not implemented | Not implemented |
+| **R15 - SQL Injection / Hashing**    | [Hashing](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/contexts/auth-context.js) | [SQL Injection. NOTE: All routes were modified.](https://github.com/Kggupta/DegreeMap/commit/ec5e2d367c28cedeb6c916454ef6d4727ec360f1) |
 | **R16 - Course Deadlines**           | Not implemented | Not implemented |
 
 # 6. Milestone Reports

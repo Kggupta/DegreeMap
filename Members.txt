@@ -13,8 +13,9 @@ Keshav Gupta
 - Brainstormed application features
 - Added sample sql query output screenshots to report
 - Wrote RXc for all features in report
-- Implemented R6,R7,R8,R12,R14
+- Implemented R6,R7,R8,R12,R14,R15
 - Implemented R13 front-end
+- Wrote remaining RXd's that weren't covered by anyone else
 
 Isshana Mohanakumar
 - Wrote interface designs for R9, R10
