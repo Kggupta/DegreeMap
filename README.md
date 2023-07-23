@@ -43,6 +43,8 @@ HOST="localhost"
 PORT=3306
 APIPORT=3030
 SERVERURL="http://localhost:3030"
+USEREMAIL="email@email.com"
+USEREMAILPASS="emailpassword"
 ```
 
 You can get your API Token for the prod data by clicking [here](https://openapi.data.uwaterloo.ca/api-docs/index.html). Simply follow the registration steps and the Token will be emailed to you.
@@ -127,7 +129,7 @@ The application currently supports the following features:
 | **R13 - AI Course Suggestion Model** | [Course Suggestion UI](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/takecourse.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/RecommenderRoutes.js), [AI Model Scripts](https://github.com/Kggupta/DegreeMap/tree/main/Server/Recommender) |
 | **R14 - Graded Content**             | [Graded Content](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/gradedcontent.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/GradedContentRoutes.js) |
 | **R15 - SQL Injection / Hashing**    | [Hashing](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/contexts/auth-context.js) | [SQL Injection. NOTE: All routes were modified.](https://github.com/Kggupta/DegreeMap/commit/ec5e2d367c28cedeb6c916454ef6d4727ec360f1) |
-| **R16 - Course Deadlines**           | Not implemented | Not implemented |
+| **R16 - Course Deadlines**           | [Deadline Management](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/deadlines.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/DeadlineRoutes.js) |
 
 # 6. Milestone Reports
 See `MilestoneReports/MX` to view the report PDFs and assets.

@@ -18,6 +18,8 @@ HOST="localhost"
 PORT=3306
 APIPORT=3030
 SERVERURL="http://localhost:3030"
+USEREMAIL="email@email.com"
+USEREMAILPASS="emailpassword"
 ```
 4. Install the NPM packages.
 ```
