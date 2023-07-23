@@ -13,7 +13,8 @@ import { ro } from 'date-fns/locale';
 const searchColumns = [
 	{
 	  field: 'name',
-	  headerName: "Name", width: 400
+	  headerName: "Name", width: 400,
+	  
 	},
 	{ field: "grade", headerName: "Grade", width: 200 },
 	{ field: "weight", headerName: "Weight", width: 200 },

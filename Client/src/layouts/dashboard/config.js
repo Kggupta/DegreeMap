@@ -11,6 +11,7 @@ import XCircleIcon from '@heroicons/react/24/solid/XCircleIcon';
 import CalendarIcon from '@heroicons/react/24/solid/CalendarDaysIcon';
 import CalculatorIcon from '@heroicons/react/24/solid/CalculatorIcon'
 import { SvgIcon } from '@mui/material';
+import ClockIcon from '@heroicons/react/24/solid/ClockIcon';
 
 export const items = [
   // {
@@ -91,6 +92,15 @@ export const items = [
     icon: (
       <SvgIcon fontSize='small'>
         <CalculatorIcon/>
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'Deadlines',
+    path: '/deadlines',
+    icon: (
+      <SvgIcon fontSize='small'>
+        <ClockIcon/>
       </SvgIcon>
     )
   }

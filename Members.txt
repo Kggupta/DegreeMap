@@ -13,7 +13,7 @@ Keshav Gupta
 - Brainstormed application features
 - Added sample sql query output screenshots to report
 - Wrote RXc for all features in report
-- Implemented R6,R7,R8,R12,R14,R15
+- Implemented R6,R7,R8,R12,R14,R15,R16
 - Implemented R13 front-end
 - Wrote remaining RXd's that weren't covered by anyone else
 

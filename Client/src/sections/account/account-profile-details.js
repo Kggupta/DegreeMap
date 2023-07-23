@@ -29,7 +29,7 @@ export const AccountProfileDetails = () => {
   const formik = useFormik({
     initialValues: {
       name: user?.name,
-      password: user?.password,
+      password: '',
       confirmPassword: '',
       level: user?.level,
       submit: null
