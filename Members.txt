@@ -16,6 +16,7 @@ Keshav Gupta
 - Implemented R6,R7,R8,R12,R14,R15,R16
 - Implemented R13 front-end
 - Wrote remaining RXd's that weren't covered by anyone else
+- Did DX voice over and recording
 
 Isshana Mohanakumar
 - Wrote interface designs for R9, R10
@@ -27,6 +28,7 @@ Isshana Mohanakumar
 - Wrote application assumptions (Sections, professors)
 - Wrote R7d, R8d report
 - Implemented R10 + wrote report entry for part d
+- Wrote script for DX video
 
 Edward Pei
 - Wrote interface designs for R11, R12
@@ -37,6 +39,7 @@ Edward Pei
 - Wrote application assumptions (Deadlines, Graded Content)
 - Wrote R6d report
 - Implemented R13 backend
+- Wrote script for DX video
 
 Ricky Lu
 - Wrote interface designs for R13, R14
@@ -45,6 +48,7 @@ Ricky Lu
 - Wrote R2 section
 - Brainstormed application features
 - Implemented R11 + wrote report entry
+- Edited video and audio files from Keshav to make the final DX video.
 
 Govind Nair
 - Wrote interface designs for R15, R16
@@ -55,3 +59,4 @@ Govind Nair
 - Brainstormed application features
 - Wrote application assumptions (Users, Courses)
 - Implemented R9 + wrote report entry
+- Wrote script for DX video
