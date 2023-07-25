@@ -131,7 +131,7 @@ The application currently supports the following features:
 | **R13 - AI Course Suggestion Model** | [Course Suggestion UI](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/takecourse.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/RecommenderRoutes.js), [AI Model Scripts](https://github.com/Kggupta/DegreeMap/tree/main/Server/Recommender) |
 | **R14 - Graded Content**             | [Graded Content](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/gradedcontent.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/GradedContentRoutes.js) |
 | **R15 - SQL Injection / Hashing**    | [Hashing](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/contexts/auth-context.js) | [SQL Injection. NOTE: All routes were modified.](https://github.com/Kggupta/DegreeMap/commit/ec5e2d367c28cedeb6c916454ef6d4727ec360f1) |
-| **R16 - Course Deadlines**           | [Deadline Management](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/deadlines.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/DeadlineRoutes.js) |
+| **R16 - Course Deadlines**           | [Deadline Management](https://github.com/Kggupta/DegreeMap/blob/main/Client/src/pages/deadlines.js) | [Routes](https://github.com/Kggupta/DegreeMap/blob/main/Server/src/DeadlineRoutes.js), [Sending Email](https://github.com/Kggupta/DegreeMap/blob/0a9fd26bb0988a3aceb21e346e8f9f9ccafc6a10/Server/index.js#L40C8-L40C8) |
 
 # 6. Milestone Reports
 See `MilestoneReports/MX` to view the report PDFs and assets.
