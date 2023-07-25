@@ -258,7 +258,7 @@ const Page = () => {
         />
         <TextField
           style={{ width: '10%', margin: '10px' }}
-          value={user.level}
+          value={user?.level}
           label="Level"
         />
         <Button

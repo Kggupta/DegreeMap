@@ -4,6 +4,8 @@ Our group is creating a web application that will allow University of Waterloo s
 
 What sets us apart from other University applications like RateMyProf and UWFlow is that rather than focusing on individual courses, we consider the student's entire university career. We do this by calculating GPA's, persisting data from previous terms, and including this data in future analysis. We also help them plan courses based on pre-requisites and the courses their friends are taking. We will be a tool that the students use during their entire degree.
 
+[Demo Video](https://www.youtube.com/watch?v=73rIotVdLA0)
+
 # 1. Team Members
 - Keshav Gupta 
 - Isshana Mohanakumar 
